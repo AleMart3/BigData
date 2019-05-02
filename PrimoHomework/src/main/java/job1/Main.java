@@ -17,8 +17,8 @@ public class Main {
 
 		job.setJarByClass(Main.class);
 		
-		job.setMapperClass(Mapper1.class);
-		job.setReducerClass(Reducer1.class);
+		job.setMapperClass(FirstMapper.class);
+		// job.setReducerClass(Reducer1.class);
 
 		FileInputFormat.addInputPath(job, new Path("input/prices_50mila.csv"));
 		FileOutputFormat.setOutputPath(job, new Path("output"));
