@@ -1,6 +1,9 @@
 package test;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -33,9 +36,15 @@ public class TestProva
      * Rigourous Test :-)
      * @throws ParseException 
      */
-    public void testApp() throws ParseException
+    @SuppressWarnings("deprecation")
+	public void testApp() throws ParseException
     {
            
+    	
+    	SimpleDateFormat format= new SimpleDateFormat("yyyy-mm-dd");
+		Date date = format.parse("1998-02-02");
+		System.out.println(date.getYear());
+    	
     	
     }
 }
