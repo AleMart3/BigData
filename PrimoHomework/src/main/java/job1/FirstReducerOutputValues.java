@@ -10,21 +10,19 @@ import java.io.IOException;
 
 public class FirstReducerOutputValues implements WritableComparable<FirstReducerOutputValues>{
 
-	// + "," + String.valueOf(this.sommaVol) + "," + String.valueOf(cont);
-
 	private IntWritable year;
 	private DoubleWritable mediaChiusura;
 	private DoubleWritable minLow;
 	private DoubleWritable maxHigh;
 	private DoubleWritable sommaVol;
-	private DoubleWritable cont; 
+	private IntWritable cont; 
 
 	public FirstReducerOutputValues() {
 	}
 
 
 	public FirstReducerOutputValues(IntWritable year, DoubleWritable mediaChiusura, DoubleWritable minLow, DoubleWritable maxHigh,
-			DoubleWritable sommaVol, DoubleWritable cont) {
+			DoubleWritable sommaVol, IntWritable cont) {
 		this.year = year;
 		this.mediaChiusura = mediaChiusura;
 		this.minLow = minLow;
@@ -74,11 +72,11 @@ public class FirstReducerOutputValues implements WritableComparable<FirstReducer
 		this.sommaVol = sommaVol;
 	}
 
-	public DoubleWritable getCont() {
+	public IntWritable getCont() {
 		return cont;
 	}
 
-	public void setCont(DoubleWritable cont) {
+	public void setCont(IntWritable cont) {
 		this.cont = cont;
 	}
 
@@ -114,17 +112,17 @@ public class FirstReducerOutputValues implements WritableComparable<FirstReducer
 		this.minLow = new DoubleWritable(in.readDouble());
 		this.maxHigh = new DoubleWritable(in.readDouble());
 		this.sommaVol = new DoubleWritable(in.readDouble());
-		this.cont = new DoubleWritable(in.readDouble());
+		this.cont = new IntWritable(in.readInt());
 		
 	}
 
 	public void write(DataOutput out) throws IOException {
-		out.writeDouble(this.year.get());
+		out.writeInt(this.year.get());
 		out.writeDouble(this.mediaChiusura.get());
 		out.writeDouble(this.minLow.get());
 		out.writeDouble(this.maxHigh.get());
 		out.writeDouble(this.sommaVol.get());
-		out.writeDouble(this.cont.get());
+		out.writeInt(this.cont.get());
 
 	}
 

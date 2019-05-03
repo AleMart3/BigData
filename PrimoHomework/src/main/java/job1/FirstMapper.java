@@ -21,10 +21,9 @@ public class FirstMapper  extends Mapper<LongWritable, Text, TickerDate, Text> {
 		//crea un array di stringhe, stringhe che sono pari al numero di |
 		String[] line = value.toString().split("[,]");
 
-
 		String data= line[Costanti.date];
-
 		SimpleDateFormat format= new SimpleDateFormat("yyyy-mm-dd");
+		
 		try {
 			Date date = format.parse(data);
 

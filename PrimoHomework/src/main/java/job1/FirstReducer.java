@@ -50,11 +50,10 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 		}
 		
 		FirstReducerOutputValues outputValues = new FirstReducerOutputValues(key.getYear(), new DoubleWritable(this.sommaChiusura/cont),
-		new DoubleWritable(minLow),new DoubleWritable(maxHigh), new DoubleWritable(sommaVol), new DoubleWritable(cont));
+		new DoubleWritable(minLow),new DoubleWritable(maxHigh), new DoubleWritable(sommaVol), new IntWritable(cont));
 		
 		context.write(new Text(key.getTicker()), outputValues);
-		
-		// media chiusura  1998 o 2018 calcolare minimo low, massimo high, somma volume, conteggio
+	
 		
 	}
 	
