@@ -31,13 +31,7 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 		this.sommaChiusura = 0.0; 
 		this.sommaVol=0.0;
 		
-		Map<TickerDate, Text> countMap = new HashMap<TickerDate,Text>();
-		for (Text value: values){
-			countMap.put(key, value);
-		}
-		Map<TickerDate, Text> sortedMap = sortByValues(countMap);
-
-		for (Text value : sortedMap.values()){
+		for (Text value : values){
 			String[] line = value.toString().split("[,]");
 
 			Double close = Double.parseDouble(line[0]); 
@@ -50,10 +44,10 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 				this.maxHigh = high;
 			}
 
-			if (cont==0 || cont==sortedMap.values().size()-1){
-				sommaChiusura = close; 
-			}
-
+			if (key.getYear().equals(new IntWritable(1998)) | key.getYear().equals(new IntWritable(2018))){		 		
+ 				this.sommaChiusura += close; 
+			}	
+ 				
 			aggiornaMinimo(low); 
 			aggiornaMassimo(high); 
 			sommaVolumi(volume);
@@ -81,35 +75,6 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 	private void aggiornaMassimo(Double high){
 		if(this.maxHigh < high)
 			this.maxHigh = high; 
-	}
-
-
-	/*
-	 * sorts the map by values. Taken from:
-	 * http://javarevisited.blogspot.it/2012/12/how-to-sort-hashmap-java-by-key-and-value.html
-	 */
-	@SuppressWarnings("rawtypes")
-	private static <K extends Comparable, V extends Comparable> Map<TickerDate, Text> sortByValues(Map<TickerDate, Text> map) {
-
-		//trasforma la mappa in una lista dove ogni elemento della lista è chiave=valore
-
-		List<Map.Entry<TickerDate, Text>> entries = new LinkedList<Map.Entry<TickerDate, Text>>(map.entrySet());
-
-		Collections.sort(entries, new Comparator<Map.Entry<TickerDate, Text>>() {
-
-			public int compare(Map.Entry<TickerDate, Text> o1, Map.Entry<TickerDate, Text> o2) {
-				return o2.getKey().getYear().compareTo(o1.getKey().getYear());
-			}
-		});
-
-		//LinkedHashMap will keep the keys in the order they are inserted
-		Map<TickerDate, Text> sortedMap = new LinkedHashMap<TickerDate, Text>();
-
-		for (Map.Entry<TickerDate, Text> entry : entries) {
-			sortedMap.put(entry.getKey(), entry.getValue());
-		}
-
-		return sortedMap;
 	}
 
 
