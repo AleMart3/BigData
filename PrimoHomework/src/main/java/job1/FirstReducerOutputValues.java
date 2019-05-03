@@ -102,6 +102,7 @@ public class FirstReducerOutputValues implements WritableComparable<FirstReducer
 
 	}
 
+	@Override
 	public int compareTo(FirstReducerOutputValues that) {
 		return 0;
 	}

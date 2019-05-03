@@ -21,12 +21,12 @@ public class SecondMapper extends Mapper<LongWritable, Text, Text, FirstReducerO
 		double minLow= Double.parseDouble(line[Costanti2.minLow]);
 		double maxHigh=Double.parseDouble(line[Costanti2.maxHigh]);
 		double sommaVol= Double.parseDouble(line[Costanti2.sommaVol]);
-		int cont= Integer.parseInt(line[Costanti2.cont]);
+		int cont= Integer.parseInt(line[Costanti2.cont].trim());
 		
 		FirstReducerOutputValues fr = new FirstReducerOutputValues(new IntWritable(year), new DoubleWritable(close),
 			new DoubleWritable(minLow),new DoubleWritable(maxHigh),new DoubleWritable(sommaVol),new IntWritable(cont));
 		
-		System.out.println(ticker + fr.toString());
+	
 		context.write(new Text(ticker), fr);
 		
 	}

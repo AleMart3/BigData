@@ -3,12 +3,9 @@ package job1;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.InputFormat;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-
-
 
 
 public class Main {
@@ -23,7 +20,7 @@ public class Main {
 				
 		job.setReducerClass(FirstReducer.class);
 
-		FileInputFormat.addInputPath(job, new Path("input/prices_50mila.csv"));
+		FileInputFormat.addInputPath(job, new Path("input/historical_stock_prices.csv"));
 		FileOutputFormat.setOutputPath(job, new Path("output/job1"));
 		
 		job.setMapOutputKeyClass(TickerDate.class);
@@ -51,7 +48,7 @@ public class Main {
 		job2.setMapOutputValueClass(FirstReducerOutputValues.class);
 
 		job2.setOutputKeyClass(Text.class);
-		job2.setOutputValueClass(FirstReducerOutputValues.class);
+		job2.setOutputValueClass(SecondReducerOutputValues.class);
 
 		job2.waitForCompletion(true);
 		
