@@ -32,8 +32,8 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 		this.sommaVol=0.0;
 		Map<TickerDate, Text> countMap = new HashMap<TickerDate,Text>();
 		Map<TickerDate, Text> sortedMap = sortByValues(countMap);
-		
-		for (Text value : values){
+
+		for (Text value : sortedMap.values()){
 			String[] line = value.toString().split("[,]");
 
 			Double close = Double.parseDouble(line[0]); 
@@ -45,12 +45,10 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 				this.minLow = low;
 				this.maxHigh = high;
 			}
-			
-			
-			if (key.getYear().equals(new IntWritable(1998)) | key.getYear().equals(new IntWritable(2018))){
-				this.sommaChiusura += close; 
-			}
 
+			if (cont==0 || cont==sortedMap.values().size()-1){
+				sommaChiusura = close; 
+			}
 
 			aggiornaMinimo(low); 
 			aggiornaMassimo(high); 
@@ -93,17 +91,17 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 
 		List<Map.Entry<TickerDate, Text>> entries = new LinkedList<Map.Entry<TickerDate, Text>>(map.entrySet());
 
-		Collections.sort(entries, new Comparator<Map.Entry<Text, FirstReducerOutputValues>>() {
+		Collections.sort(entries, new Comparator<Map.Entry<TickerDate, Text>>() {
 
-			public int compare(Map.Entry<Text, FirstReducerOutputValues> o1, Map.Entry<Text, FirstReducerOutputValues> o2) {
-				return o2.getValue().getYear().compareTo(o1.getValue().getYear());
+			public int compare(Map.Entry<TickerDate, Text> o1, Map.Entry<TickerDate, Text> o2) {
+				return o2.getKey().getYear().compareTo(o1.getKey().getYear());
 			}
 		});
 
 		//LinkedHashMap will keep the keys in the order they are inserted
-		Map<Text, FirstReducerOutputValues> sortedMap = new LinkedHashMap<Text, FirstReducerOutputValues>();
+		Map<TickerDate, Text> sortedMap = new LinkedHashMap<TickerDate, Text>();
 
-		for (Map.Entry<Text, FirstReducerOutputValues> entry : entries) {
+		for (Map.Entry<TickerDate, Text> entry : entries) {
 			sortedMap.put(entry.getKey(), entry.getValue());
 		}
 
