@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.hadoop.io.DoubleWritable;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
@@ -23,24 +22,28 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 	private DoubleWritable absoluteMax = new DoubleWritable(); 
 
 	public void reduce(Text key, Iterable<FirstReducerOutputValues> values, Context context) throws IOException, InterruptedException {
-		DoubleWritable close1998 = new DoubleWritable();
-		DoubleWritable close2018 = new DoubleWritable(); 
+		DoubleWritable firstClose = new DoubleWritable();
+		DoubleWritable lastClose = new DoubleWritable(); 
+
 		double sommaVolumi = 0;
 		int cont = 0; 
 
-		for (FirstReducerOutputValues value : values){
+		Map<Text, FirstReducerOutputValues> firstMap = new HashMap<Text,FirstReducerOutputValues>();
+		for (FirstReducerOutputValues value: values){
+			firstMap.put(key, value);
+		}
+		Map<Text, FirstReducerOutputValues> sortedMap = sortByYears(firstMap);
 
-			if (value.getYear().equals(new IntWritable(2018))) {
-				close2018 = value.getMediaChiusura(); 
-			}
-
-			if (value.getYear().equals(new IntWritable(1998))){
-				close1998 = value.getMediaChiusura();
-			}
+		for (FirstReducerOutputValues value : sortedMap.values()){
 
 			if (cont == 0) {
+				firstClose = value.getMediaChiusura();
 				this.absoluteMin = value.getMinLow();
 				this.absoluteMax = value.getMaxHigh();
+			}
+
+			if (cont == sortedMap.values().size()-1) {
+				lastClose = value.getMediaChiusura();
 			}
 
 			aggiornaMinimo(value.getMinLow()); 
@@ -48,13 +51,13 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 			sommaVolumi += value.getSommaVol().get(); 
 			cont += value.getCont().get(); 
 		}
-		
-		DoubleWritable differenza = new DoubleWritable(close2018.get()-close1998.get());
-		double incrementoPercentuale = incrementoPercentuale(close1998.get(), differenza.get());
+
+		DoubleWritable differenza = new DoubleWritable(lastClose.get()-firstClose.get());
+		double incrementoPercentuale = incrementoPercentuale(firstClose.get(), differenza.get());
 		//context.write(key, value);
-		
+
 		SecondReducerOutputValues outputValues= new SecondReducerOutputValues(differenza, absoluteMin, absoluteMax, 
-									new DoubleWritable(sommaVolumi/cont), new DoubleWritable(incrementoPercentuale));
+				new DoubleWritable(sommaVolumi/cont), new DoubleWritable(incrementoPercentuale));
 
 		countMap.put(new Text(key), outputValues);
 	}
@@ -87,7 +90,7 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 		List<Map.Entry<Text, SecondReducerOutputValues>> entries = new LinkedList<Map.Entry<Text, SecondReducerOutputValues>>(map.entrySet());
 
 		Collections.sort(entries, new Comparator<Map.Entry<Text, SecondReducerOutputValues>>() {
-			
+
 			public int compare(Map.Entry<Text, SecondReducerOutputValues> o1, Map.Entry<Text, SecondReducerOutputValues> o2) {
 				return o2.getValue().getDifferenzaChiusura().compareTo(o1.getValue().getDifferenzaChiusura());
 			}
@@ -103,11 +106,10 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 		return sortedMap;
 	}
 
-
-
-
-	private double incrementoPercentuale(double close1998, double close2018){
-		return ((close2018/close1998)*100)-100;
+	private double incrementoPercentuale(double firstClose, double lastClose){
+		return ((lastClose-firstClose)/firstClose)*100;
+				
+				//((close2018/close1998)*100)-100;
 	}
 
 	private void aggiornaMinimo(DoubleWritable low){
@@ -119,4 +121,33 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 		if(this.absoluteMax.get() < high.get())
 			this.absoluteMax = high; 
 	}
+
+	/*
+	 * sorts the map by values. Taken from:
+	 * http://javarevisited.blogspot.it/2012/12/how-to-sort-hashmap-java-by-key-and-value.html
+	 */
+	@SuppressWarnings("rawtypes")
+	private static <K extends Comparable, V extends Comparable> Map<Text, FirstReducerOutputValues> sortByYears(Map<Text, FirstReducerOutputValues> map) {
+
+		//trasforma la mappa in una lista dove ogni elemento della lista è chiave=valore
+
+		List<Map.Entry<Text, FirstReducerOutputValues>> entries = new LinkedList<Map.Entry<Text, FirstReducerOutputValues>>(map.entrySet());
+
+		Collections.sort(entries, new Comparator<Map.Entry<Text, FirstReducerOutputValues>>() {
+
+			public int compare(Map.Entry<Text, FirstReducerOutputValues> o1, Map.Entry<Text, FirstReducerOutputValues> o2) {
+				return o2.getValue().getYear().compareTo(o1.getValue().getYear());
+			}
+		});
+
+		//LinkedHashMap will keep the keys in the order they are inserted
+		Map<Text, FirstReducerOutputValues> sortedMap = new LinkedHashMap<Text, FirstReducerOutputValues>();
+
+		for (Map.Entry<Text, FirstReducerOutputValues> entry : entries) {
+			sortedMap.put(entry.getKey(), entry.getValue());
+		}
+
+		return sortedMap;
+	}
+
 }

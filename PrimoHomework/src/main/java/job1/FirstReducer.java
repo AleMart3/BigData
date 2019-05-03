@@ -30,7 +30,11 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 		int cont = 0; 
 		this.sommaChiusura = 0.0; 
 		this.sommaVol=0.0;
+		
 		Map<TickerDate, Text> countMap = new HashMap<TickerDate,Text>();
+		for (Text value: values){
+			countMap.put(key, value);
+		}
 		Map<TickerDate, Text> sortedMap = sortByValues(countMap);
 
 		for (Text value : sortedMap.values()){
