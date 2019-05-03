@@ -72,6 +72,6 @@ public class TickerDate implements WritableComparable<TickerDate> {
 
 	public void write(DataOutput out) throws IOException {
 		out.writeUTF(this.ticker.toString());
-		out.writeUTF(this.year.toString());
+		out.writeInt(this.year.get());
 	}
 }

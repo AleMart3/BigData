@@ -44,6 +44,13 @@ public class TestProva
     	SimpleDateFormat format= new SimpleDateFormat("yyyy-mm-dd");
 		Date date = format.parse("1998-02-02");
 		System.out.println(date.getYear());
+		
+		String s= "AHH,11.5,11.5799999237061,8.49315452575684,11.25,11.6800003051758,4633900,2013-05-08";
+		String[] line = s.split("[,]");
+		String close= line[1];
+		Double c = Double.parseDouble(close);
+		
+		System.out.println(c);
     	
     	
     }

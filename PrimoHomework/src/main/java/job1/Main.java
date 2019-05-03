@@ -18,16 +18,16 @@ public class Main {
 		job.setJarByClass(Main.class);
 		
 		job.setMapperClass(FirstMapper.class);
-		// job.setReducerClass(Reducer1.class);
+		job.setReducerClass(FirstReducer.class);
 
-		FileInputFormat.addInputPath(job, new Path("input/prices_50mila.csv"));
+		FileInputFormat.addInputPath(job, new Path("input/ahh2018.csv"));
 		FileOutputFormat.setOutputPath(job, new Path("output"));
 		
-		job.setMapOutputKeyClass(Text.class);
-		job.setMapOutputValueClass(LongWritable.class);
+		job.setMapOutputKeyClass(TickerDate.class);
+		job.setMapOutputValueClass(Text.class);
 
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(LongWritable.class);
+		job.setOutputValueClass(FirstReducerOutputValues.class);
 
 		job.waitForCompletion(true);
 		

@@ -15,6 +15,8 @@ public class FirstMapper  extends Mapper<LongWritable, Text, TickerDate, Text> {
 
 	@SuppressWarnings("deprecation")
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+		
+		if(key.get()==0) return;
 
 		//crea un array di stringhe, stringhe che sono pari al numero di |
 		String[] line = value.toString().split("[,]");

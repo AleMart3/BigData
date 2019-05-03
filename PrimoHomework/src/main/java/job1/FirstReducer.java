@@ -2,27 +2,28 @@ package job1;
 
 import java.io.IOException;
 
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class FirstReducer extends Reducer<TickerDate, Text, TickerDate, Text> {
+public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOutputValues> {
 
-	private int minLow; 
-	private int maxHigh; 
-	private int sommaVol = 0; 
+	private Double minLow; 
+	private Double maxHigh; 
+	private Double sommaVol = 0.0; 
 
 	public void reduce(TickerDate key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 		int cont = 0; 
-		int sommaChiusura = 0; 
+		Double sommaChiusura = 0.0; 
 		
 		for (Text value : values){
 			String[] line = value.toString().split("[,]");
 			
-			int close = Integer.parseInt(line[0]); 
-			int low = Integer.parseInt(line[1]);
-			int high = Integer.parseInt(line[2]);
-			int volume = Integer.parseInt(line[3]); 
+			Double close = Double.parseDouble(line[0]); 
+			Double low = Double.parseDouble(line[1]);
+			Double high = Double.parseDouble(line[2]);
+			Double volume = Double.parseDouble(line[3]); 
 			
 			if (cont == 0) {
 				this.minLow = low;
@@ -39,22 +40,25 @@ public class FirstReducer extends Reducer<TickerDate, Text, TickerDate, Text> {
 			cont ++;
 		}
 		
-		String risultato = String.valueOf((sommaChiusura/cont)) + "," + String.valueOf(this.minLow) + "," + String.valueOf(this.maxHigh) + "," + String.valueOf(this.sommaVol) + "," + String.valueOf(cont);
-		context.write(key, new Text(risultato));
+		FirstReducerOutputValues outputValues = new FirstReducerOutputValues(key.getYear(), new DoubleWritable(sommaChiusura/cont),
+		new DoubleWritable(minLow),new DoubleWritable(maxHigh), new DoubleWritable(sommaVol), new DoubleWritable(cont));
+		
+		context.write(new Text(key.getTicker()), outputValues);
+		
 		// media chiusura  1998 o 2018 calcolare minimo low, massimo high, somma volume, conteggio
 		
 	}
 	
-	private void sommaVolumi(int vol){
+	private void sommaVolumi(Double vol){
 		this.sommaVol += vol; 
 	}
 	
-	private void aggiornaMinimo(int low){
+	private void aggiornaMinimo(Double low){
 		if(this.minLow > low)
 			this.minLow = low;
 	}
 	
-	private void aggiornaMassimo(int high){
+	private void aggiornaMassimo(Double high){
 		if(this.maxHigh < high)
 			this.maxHigh = high; 
 	}
