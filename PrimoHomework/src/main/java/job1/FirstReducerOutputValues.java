@@ -91,8 +91,8 @@ public class FirstReducerOutputValues implements WritableComparable<FirstReducer
 
 	@Override
 	public String toString() {
-		return "[year=" + year + ", mediaChiusura=" + mediaChiusura + ", minLow=" + minLow
-				+ ", maxHigh=" + maxHigh + ", sommaVol=" + sommaVol.toString() + ", cont=" + cont + "]";
+		return "," + year + ", " + mediaChiusura + ", " + minLow
+				+ "," + maxHigh + "," + sommaVol + ", " + cont + "";
 	}
 
 	@Override
