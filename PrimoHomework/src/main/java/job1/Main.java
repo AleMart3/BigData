@@ -2,11 +2,12 @@ package job1;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+
 
 
 public class Main {
@@ -18,9 +19,10 @@ public class Main {
 		job.setJarByClass(Main.class);
 		
 		job.setMapperClass(FirstMapper.class);
+				
 		job.setReducerClass(FirstReducer.class);
 
-		FileInputFormat.addInputPath(job, new Path("input/ahh2018.csv"));
+		FileInputFormat.addInputPath(job, new Path("input/prices_50mila.csv"));
 		FileOutputFormat.setOutputPath(job, new Path("output"));
 		
 		job.setMapOutputKeyClass(TickerDate.class);

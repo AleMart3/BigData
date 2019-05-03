@@ -9,13 +9,20 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOutputValues> {
 
+	/*queste variabili vengono inizializzate solo una volta
+	 *si eseguono queste, poi si ripete in loop il metodo reduce non tutto
+	 */
+	
 	private Double minLow; 
 	private Double maxHigh; 
-	private Double sommaVol = 0.0; 
+	private Double sommaVol=0.0;
+	private Double sommaChiusura=0.0;
+	
 
 	public void reduce(TickerDate key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 		int cont = 0; 
-		Double sommaChiusura = 0.0; 
+		this.sommaChiusura = 0.0; 
+		this.sommaVol=0.0;
 		
 		for (Text value : values){
 			String[] line = value.toString().split("[,]");
@@ -31,16 +38,18 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 			}
 
 			if (key.getYear().equals(new IntWritable(1998)) | key.getYear().equals(new IntWritable(2018))){
-				sommaChiusura += close; 
+				this.sommaChiusura += close; 
 			}
+
 			
 			aggiornaMinimo(low); 
 			aggiornaMassimo(high); 
 			sommaVolumi(volume);
 			cont ++;
+			
 		}
 		
-		FirstReducerOutputValues outputValues = new FirstReducerOutputValues(key.getYear(), new DoubleWritable(sommaChiusura/cont),
+		FirstReducerOutputValues outputValues = new FirstReducerOutputValues(key.getYear(), new DoubleWritable(this.sommaChiusura/cont),
 		new DoubleWritable(minLow),new DoubleWritable(maxHigh), new DoubleWritable(sommaVol), new DoubleWritable(cont));
 		
 		context.write(new Text(key.getTicker()), outputValues);
