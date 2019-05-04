@@ -43,7 +43,7 @@ public class TestProva
     {
            
     	
-    	/*SimpleDateFormat format= new SimpleDateFormat("yyyy-mm-dd");
+    	SimpleDateFormat format= new SimpleDateFormat("yyyy-mm-dd");
 		Date date = format.parse("1998-02-02");
 		System.out.println(date.getYear());
 		
@@ -53,14 +53,14 @@ public class TestProva
 		Double c = Double.parseDouble(close);
 		
 		System.out.println(c);
-    	*/
+    	//--------------------------------------
     	long start = System.currentTimeMillis();
 
         long end = System.currentTimeMillis();
 
     	NumberFormat formatter = new DecimalFormat("#0.00000");
     	System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
-		
+    			
     	
     }
 }
