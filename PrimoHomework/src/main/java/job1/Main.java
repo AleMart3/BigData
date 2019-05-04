@@ -1,5 +1,8 @@
 package job1;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -11,7 +14,10 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
+		
 
+		long start = System.currentTimeMillis();
+	
 		Job job = new Job(new Configuration(), "Main");
 
 		job.setJarByClass(Main.class);
@@ -53,8 +59,10 @@ public class Main {
 		job2.waitForCompletion(true);
 		
 		
-		
-		
+        long end = System.currentTimeMillis();
+
+    	NumberFormat formatter = new DecimalFormat("#0.000");
+    	System.out.print("Execution time is " + formatter.format((end - start) / 1000d/60) + " min");
 	}
 
 }

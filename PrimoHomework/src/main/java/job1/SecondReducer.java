@@ -38,15 +38,6 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 				this.absoluteMax = value.getMaxHigh();
 			}
 
-			if (value.getYear().equals(new IntWritable(2018))) {
-				lastClose = value.getMediaChiusura(); 
-			}
-
-			if (value.getYear().equals(new IntWritable(1998))){
-				firstClose = value.getMediaChiusura();
-			}
-
-
 			aggiornaMinimo(value.getMinLow()); 
 			aggiornaMassimo(value.getMaxHigh()); 
 			
@@ -57,7 +48,7 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 			
 			if (annoMassimo < value.getYear().get()) {
 				annoMassimo = value.getYear().get();
-				firstClose.set(value.getMediaChiusura().get());
+				lastClose.set(value.getMediaChiusura().get());
 			}
 			
 			sommaVolumi += value.getSommaVol().get(); 
@@ -118,8 +109,10 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 		return sortedMap;
 	}
 
-	private double incrementoPercentuale(double firstClose, double lastClose){
-		return ((lastClose-firstClose)/firstClose)*100;
+	private double incrementoPercentuale(double firstClose, double differenza){
+		return ((differenza/firstClose)*100);
+		
+		//return ((lastClose/firstClose)*100)-100;
 
 		//((close2018/close1998)*100)-100;
 	}
