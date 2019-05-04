@@ -28,6 +28,8 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 
 		double sommaVolumi = 0;
 		int cont = 0; 
+		int annoMinimo = 3000; 
+		int annoMassimo = 0; 
 
 		for (FirstReducerOutputValues value : values){
 
@@ -47,6 +49,17 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 
 			aggiornaMinimo(value.getMinLow()); 
 			aggiornaMassimo(value.getMaxHigh()); 
+			
+			if (annoMinimo > value.getYear().get()) {
+				annoMinimo = value.getYear().get();
+				firstClose.set(value.getMediaChiusura().get());
+			}
+			
+			if (annoMassimo < value.getYear().get()) {
+				annoMassimo = value.getYear().get();
+				firstClose.set(value.getMediaChiusura().get());
+			}
+			
 			sommaVolumi += value.getSommaVol().get(); 
 			cont += value.getCont().get(); 
 		}
@@ -120,10 +133,5 @@ public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text,
 		if(this.absoluteMax.get() < high.get())
 			this.absoluteMax = high; 
 	}
-
-	/*
-	 * sorts the map by values. Taken from:
-	 * http://javarevisited.blogspot.it/2012/12/how-to-sort-hashmap-java-by-key-and-value.html
-	 */
 
 }

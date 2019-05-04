@@ -20,7 +20,7 @@ public class Main {
 				
 		job.setReducerClass(FirstReducer.class);
 
-		FileInputFormat.addInputPath(job, new Path("input/historical_stock_prices.csv"));
+		FileInputFormat.addInputPath(job, new Path("input/prices_50mila.csv"));
 		FileOutputFormat.setOutputPath(job, new Path("output/job1"));
 		
 		job.setMapOutputKeyClass(TickerDate.class);

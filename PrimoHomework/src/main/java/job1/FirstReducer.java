@@ -1,13 +1,6 @@
 package job1;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
@@ -43,14 +36,11 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 				this.minLow = low;
 				this.maxHigh = high;
 			}
-
-			if (key.getYear().equals(new IntWritable(1998)) | key.getYear().equals(new IntWritable(2018))){		 		
- 				this.sommaChiusura += close; 
-			}	
  				
 			aggiornaMinimo(low); 
 			aggiornaMassimo(high); 
 			sommaVolumi(volume);
+			this.sommaChiusura += close; 
 			cont ++;
 
 		}
@@ -59,7 +49,6 @@ public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOu
 				new DoubleWritable(minLow),new DoubleWritable(maxHigh), new DoubleWritable(sommaVol), new IntWritable(cont));
 
 		context.write(new Text(key.getTicker()), outputValues);
-
 
 	}
 
