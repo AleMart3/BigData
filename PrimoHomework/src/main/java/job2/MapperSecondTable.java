@@ -27,7 +27,7 @@ public class MapperSecondTable extends Mapper <LongWritable, Text, Text, Text>{
 
 			if (date.getYear()>= 104 && date.getYear()<=118){
 				String ticker = line[Costanti.ticker];
-				String campi = String.valueOf(date.getYear()+1900) + "," + line[Costanti.close] + "," + line[Costanti.volume];
+				String campi = data + "," + line[Costanti.close] + "," + line[Costanti.volume];
 
 				context.write(new Text(ticker), new Text("secondTable\t" + campi));
 
