@@ -15,7 +15,7 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Runtime.getRuntime().exec("rm -r "+System.getProperty("user.dir")+"/output");
+		Runtime.getRuntime().exec("rm -r "+System.getProperty("user.dir")+"/output_job1");
 
 		long start = System.currentTimeMillis();
 	
@@ -28,7 +28,7 @@ public class Main {
 		job.setReducerClass(FirstReducer.class);
 
 		FileInputFormat.addInputPath(job, new Path("input/prices_50mila.csv"));
-		FileOutputFormat.setOutputPath(job, new Path("output/job1"));
+		FileOutputFormat.setOutputPath(job, new Path("output_job1/firstMapReduce"));
 		
 		job.setMapOutputKeyClass(TickerDate.class);
 		job.setMapOutputValueClass(Text.class);
@@ -48,8 +48,8 @@ public class Main {
 				
 		job2.setReducerClass(SecondReducer.class);
 
-		FileInputFormat.addInputPath(job2, new Path("output/job1"));
-		FileOutputFormat.setOutputPath(job2, new Path("output/job2"));
+		FileInputFormat.addInputPath(job2, new Path("output_job1/firstMapReduce"));
+		FileOutputFormat.setOutputPath(job2, new Path("output_job1/secondMapReduce"));
 		
 		job2.setMapOutputKeyClass(Text.class);
 		job2.setMapOutputValueClass(FirstReducerOutputValues.class);

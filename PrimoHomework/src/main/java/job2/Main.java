@@ -10,20 +10,20 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
-		Runtime.getRuntime().exec("rm -r "+System.getProperty("user.dir")+"/output");
+		Runtime.getRuntime().exec("rm -r "+System.getProperty("user.dir")+"/output_job2");
 		
 		Job job = new Job(new Configuration(), "Main");
 
 		job.setJarByClass(Main.class);
 		
-		MultipleInputs.addInputPath(job, new Path("input/PrimaTabella"),TextInputFormat.class, MapperFirstTable.class);
-		MultipleInputs.addInputPath(job, new Path("input/SecondaTabella"),TextInputFormat.class, MapperSecondTable.class);
+		MultipleInputs.addInputPath(job, new Path("input/FirstTable"),TextInputFormat.class, MapperFirstTable.class);
+		MultipleInputs.addInputPath(job, new Path("input/SecondTable"),TextInputFormat.class, MapperSecondTable.class);
 				
 				
 		job.setReducerClass(ReducerJoin.class);
 
 		
-		FileOutputFormat.setOutputPath(job, new Path("output"));
+		FileOutputFormat.setOutputPath(job, new Path("output_job2/firstMapReduce"));
 		
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(Text.class);
