@@ -31,7 +31,6 @@ public class SecondReducer extends Reducer<CustomKey, CustomValues, Text, Text> 
 
 			LocalDate data = LocalDate.of(value.getAnno(), value.getMese(), value.getGiorno());
 			long time = data.toEpochDay(); //calcola il numero di giorni a partire dal 1970
-			
 			if (cont == 0) {
 				this.inizioAnno= time;
 				this.fineAnno= time;
@@ -52,11 +51,14 @@ public class SecondReducer extends Reducer<CustomKey, CustomValues, Text, Text> 
 			}
 
 		}
-	
+		
+		Double diff_percent = incrementoPercentuale(firstClose.get(),lastClose.get());
 		
 	
-		context.write(key.getSettore(), new Text(String.valueOf(volumi)+" firstClose:" + firstClose+
-				", lastClose:"+ lastClose +", cont:" + cont + " QuotazioneMedia:" +SommaQuotazioni/cont));
+		/*context.write(key.getSettore(), new Text("volumeComplessivo: "+volumi+" firstClose:" + firstClose+
+				", lastClose:"+ lastClose +", cont:" + cont + " QuotazioneMedia:" +SommaQuotazioni/cont));*/
+		context.write(key.getSettore(), new Text("volumeComplessivo: "+volumi+ " diff_percent: "+ diff_percent+ "%"+
+				      " QuotazioneMedia:" +SommaQuotazioni/cont));
 
 
 	}
@@ -71,6 +73,14 @@ public class SecondReducer extends Reducer<CustomKey, CustomValues, Text, Text> 
 		if(fineAnno < high)
 			fineAnno = high; 
 	}
-
-
+	
+	
+	private double incrementoPercentuale(double firstClose, double lastClose){
+		return ((lastClose/firstClose)*100)-100;
+	}
+	
+	
 }
+
+
+
