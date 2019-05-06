@@ -2,14 +2,14 @@ package job2;
 
 
 import java.io.IOException;
-import java.sql.Date;
+import java.time.LocalDate;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 
-public class SecondReducer extends Reducer<CustomKey, CustomValues, CustomKey, Text> {
+public class SecondReducer extends Reducer<CustomKey, CustomValues, Text, Text> {
 	
 	private long inizioAnno;
 	private long fineAnno;
@@ -20,17 +20,17 @@ public class SecondReducer extends Reducer<CustomKey, CustomValues, CustomKey, T
 		DoubleWritable firstClose = new DoubleWritable();
 		DoubleWritable lastClose = new DoubleWritable(); 
 		
+		Double SommaQuotazioni= 0.0;
+		
 		Double volumi =0.0;
 		int cont = 0; 
 	
 		for(CustomValues value: values) {
 			volumi+= value.getVolume().get();
+			SommaQuotazioni+=value.getClose().get();
 
-
-			@SuppressWarnings("deprecation")
-			Date data= new Date(Integer.parseInt(key.getAnno()),Integer.parseInt(key.getMese()),Integer.parseInt(key.getGiorno()));
-			long time = data.getTime();
-			
+			LocalDate data = LocalDate.of(value.getAnno(), value.getMese(), value.getGiorno());
+			long time = data.toEpochDay(); //calcola il numero di giorni a partire dal 1970
 			
 			if (cont == 0) {
 				this.inizioAnno= time;
@@ -55,12 +55,8 @@ public class SecondReducer extends Reducer<CustomKey, CustomValues, CustomKey, T
 	
 		
 	
-		System.out.println(firstClose);
-		System.out.println(lastClose);
-	
-		System.out.println("--------");
-
-		context.write(key, new Text(String.valueOf(volumi)));
+		context.write(key.getSettore(), new Text(String.valueOf(volumi)+" firstClose:" + firstClose+
+				", lastClose:"+ lastClose +", cont:" + cont + " QuotazioneMedia:" +SommaQuotazioni/cont));
 
 
 	}

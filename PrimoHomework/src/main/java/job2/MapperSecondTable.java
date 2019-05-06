@@ -1,9 +1,8 @@
 package job2;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -13,19 +12,18 @@ import job1.Costanti;
 
 public class MapperSecondTable extends Mapper <LongWritable, Text, Text, Text>{
 	
-	@SuppressWarnings("deprecation")
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
 		if(key.get()==0) return;
 
 		String[] line = value.toString().split("[,]");
 
 		String data= line[Costanti.date];
-		SimpleDateFormat format= new SimpleDateFormat("yyyy-mm-dd");
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		
 		try {
-			Date date = format.parse(data);
+			LocalDate date = LocalDate.parse(data, format);
 
-			if (date.getYear()>= 104 && date.getYear()<=118){
+			if (date.getYear()>= 2004 && date.getYear()<=2018){
 				String ticker = line[Costanti.ticker];
 				String campi = data + "," + line[Costanti.close] + "," + line[Costanti.volume];
 
@@ -33,7 +31,7 @@ public class MapperSecondTable extends Mapper <LongWritable, Text, Text, Text>{
 
 			}
 
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

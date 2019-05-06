@@ -56,7 +56,7 @@ public class Main {
 		job2.setMapOutputKeyClass(CustomKey.class);
 		job2.setMapOutputValueClass(CustomValues.class);
 
-		job2.setOutputKeyClass(CustomKey.class);
+		job2.setOutputKeyClass(Text.class);
 		job2.setOutputValueClass(Text.class);
 
 		job2.waitForCompletion(true);
@@ -65,7 +65,7 @@ public class Main {
         long end = System.currentTimeMillis();
 
     	NumberFormat formatter = new DecimalFormat("#0.000");
-    	System.out.print("Execution time is " + formatter.format((end - start) / 1000d/60) + " min");
+    	System.out.print("Execution time is " + formatter.format((end - start) / 1000d/60) + " min\n");
 		
 		
 		

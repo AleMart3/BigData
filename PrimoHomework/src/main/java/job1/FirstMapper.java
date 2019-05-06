@@ -3,6 +3,8 @@ package job1;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.apache.hadoop.io.IntWritable;
@@ -22,20 +24,20 @@ public class FirstMapper  extends Mapper<LongWritable, Text, TickerDate, Text> {
 		String[] line = value.toString().split("[,]");
 
 		String data= line[Costanti.date];
-		SimpleDateFormat format= new SimpleDateFormat("yyyy-mm-dd");
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		
 		try {
-			Date date = format.parse(data);
+			LocalDate date = LocalDate.parse(data, format);
 
-			if (date.getYear()>= 98 && date.getYear()<=118){
+			if (date.getYear()>= 1998 && date.getYear()<=2018){
 				String ticker = line[Costanti.ticker];
 				String campi = line[Costanti.close] + "," + line[Costanti.low] + "," + line[Costanti.high] + "," + line[Costanti.volume];
 
-				context.write(new TickerDate(new Text(ticker), new IntWritable(date.getYear()+1900)), new Text(campi));
+				context.write(new TickerDate(new Text(ticker), new IntWritable(date.getYear())), new Text(campi));
 
 			}
 
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
