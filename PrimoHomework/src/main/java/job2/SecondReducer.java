@@ -57,7 +57,7 @@ public class SecondReducer extends Reducer<CustomKey, CustomValues, Text, Text> 
 	
 		/*context.write(key.getSettore(), new Text("volumeComplessivo: "+volumi+" firstClose:" + firstClose+
 				", lastClose:"+ lastClose +", cont:" + cont + " QuotazioneMedia:" +SommaQuotazioni/cont));*/
-		context.write(key.getSettore(), new Text("volumeComplessivo: "+volumi+ " diff_percent: "+ diff_percent+ "%"+
+		context.write(key.getSettore(), new Text("Anno: " + key.getAnno() +" volumeComplessivo: "+volumi+ " diff_percent: "+ diff_percent+ "%"+
 				      " QuotazioneMedia:" +SommaQuotazioni/cont));
 
 

@@ -1,11 +1,8 @@
 package job1;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -15,7 +12,6 @@ import org.apache.hadoop.mapreduce.Mapper;
 public class FirstMapper  extends Mapper<LongWritable, Text, TickerDate, Text> {
 
 
-	@SuppressWarnings("deprecation")
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 		
 		if(key.get()==0) return;

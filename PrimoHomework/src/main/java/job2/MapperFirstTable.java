@@ -12,7 +12,10 @@ public class MapperFirstTable extends Mapper <LongWritable, Text, Text, Text>
 		if(key.get()==0) return;
 
 		String[] line = value.toString().split("[,]");
-		
-		context.write(new Text(line[Costanti_FirstTable.ticker]), new Text("firstTable\t" + line[Costanti_FirstTable.sector]));
+		String settore = line[line.length-1];
+
+		context.write(new Text(line[Costanti_FirstTable.ticker]), new Text("firstTable\t" + line[line.length - 2 ]));
+
 	}
+
 }
