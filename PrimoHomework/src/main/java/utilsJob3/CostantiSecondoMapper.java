@@ -1,4 +1,4 @@
-package job3;
+package utilsJob3;
 
 public class CostantiSecondoMapper {
 

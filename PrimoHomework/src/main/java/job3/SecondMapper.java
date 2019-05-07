@@ -9,6 +9,10 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
+import utilsJob3.CostantiSecondoMapper;
+import utilsJob3.CustomKey;
+import utilsJob3.CustomValues;
+
 
 public class SecondMapper extends Mapper <LongWritable, Text, CustomKey, CustomValues> {
 

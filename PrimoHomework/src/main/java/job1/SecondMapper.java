@@ -8,6 +8,9 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
+import utilsJob1.Costanti2;
+import utilsJob1.FirstReducerOutputValues;
+
 public class SecondMapper extends Mapper<LongWritable, Text, Text, FirstReducerOutputValues> {
 
 

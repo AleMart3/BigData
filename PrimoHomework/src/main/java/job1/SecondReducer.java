@@ -13,6 +13,9 @@ import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
+import utilsJob1.FirstReducerOutputValues;
+import utilsJob1.SecondReducerOutputValues;
+
 
 public class SecondReducer extends Reducer<Text, FirstReducerOutputValues, Text, SecondReducerOutputValues> {
 

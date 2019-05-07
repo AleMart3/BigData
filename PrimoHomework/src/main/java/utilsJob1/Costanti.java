@@ -1,6 +1,6 @@
-package job2;
+package utilsJob1;
 
-public class Costanti_SecondTable {
+public class Costanti {
 	
 	public static final int ticker = 0;
 	public static final int open = 1;

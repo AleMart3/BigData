@@ -1,4 +1,4 @@
-package job1;
+package utilsJob1;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;

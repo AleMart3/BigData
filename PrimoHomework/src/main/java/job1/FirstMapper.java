@@ -9,6 +9,9 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
+import utilsJob1.Costanti;
+import utilsJob1.TickerDate;
+
 public class FirstMapper  extends Mapper<LongWritable, Text, TickerDate, Text> {
 
 

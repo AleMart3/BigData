@@ -11,6 +11,9 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
+import utilsJob3.CustomValues;
+import utilsJob3.ThirdMapperCustomValues;
+
 public class ThirdMapper extends Mapper <LongWritable, Text, Text, ThirdMapperCustomValues> {
 	
 	private Map<ThirdMapperCustomValues, List<CustomValues>> map = new HashMap<ThirdMapperCustomValues, List<CustomValues>>();

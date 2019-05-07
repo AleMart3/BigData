@@ -1,4 +1,4 @@
-package job1;
+package utilsJob1;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.WritableComparable;

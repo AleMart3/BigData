@@ -10,6 +10,10 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
+import utilsJob1.FirstReducerOutputValues;
+import utilsJob1.SecondReducerOutputValues;
+import utilsJob1.TickerDate;
+
 
 public class Main {
 	

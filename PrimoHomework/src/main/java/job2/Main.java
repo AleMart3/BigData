@@ -11,6 +11,9 @@ import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
+import utilsJob2.CustomKey;
+import utilsJob2.CustomValues;
+
 public class Main {
 	
 	public static void main(String[] args) throws Exception {

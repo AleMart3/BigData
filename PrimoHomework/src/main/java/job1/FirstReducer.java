@@ -7,6 +7,9 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
+import utilsJob1.FirstReducerOutputValues;
+import utilsJob1.TickerDate;
+
 public class FirstReducer extends Reducer<TickerDate, Text, Text, FirstReducerOutputValues> {
 
 	/*queste variabili vengono inizializzate solo una volta

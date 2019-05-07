@@ -1,4 +1,4 @@
-package job2;
+package utilsJob2;
 
 public class Costanti_SecondMapper {
 	

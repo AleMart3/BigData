@@ -7,7 +7,7 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-import job1.Costanti;
+import utilsJob1.Costanti;
 
 
 public class MapperSecondTable extends Mapper <LongWritable, Text, Text, Text>{

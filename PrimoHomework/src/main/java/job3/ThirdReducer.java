@@ -7,6 +7,8 @@ import java.util.List;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
+import utilsJob3.ThirdMapperCustomValues;
+
 public class ThirdReducer extends Reducer<Text, ThirdMapperCustomValues, Text, Text> {
 
 	public void reduce(Text key, Iterable<ThirdMapperCustomValues> values, Context context) throws IOException, InterruptedException {
@@ -25,7 +27,7 @@ public class ThirdReducer extends Reducer<Text, ThirdMapperCustomValues, Text, T
 				if (!(list.get(i).getSettore().equals(list.get(j).getSettore())) 
 						&& !(list.get(i).getNome().equals(list.get(j).getNome()))){
 					context.write(new Text(list.get(i).getNome()+ ", " + list.get(j).getNome() + ","), 
-							new Text("Anno 2016:" + a2016 + "%, Anno 2017:" + a2017 + "%, Anno 2018:"+ a2018+ "%"));
+							new Text("Anno 2016: " + a2016 + "%, Anno 2017:" + a2017 + "%, Anno 2018:"+ a2018+ "%"));
 				}
 			
 

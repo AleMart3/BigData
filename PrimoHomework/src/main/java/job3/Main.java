@@ -12,10 +12,11 @@ import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import job3.CustomKey;
-import job3.CustomValues;
 import job3.SecondMapper;
 import job3.SecondReducer;
+import utilsJob3.CustomKey;
+import utilsJob3.CustomValues;
+import utilsJob3.ThirdMapperCustomValues;
 import job3.MapperFirstTable;
 import job3.MapperSecondTable;
 import job3.ReducerJoin;

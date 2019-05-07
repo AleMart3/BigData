@@ -8,6 +8,9 @@ import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
+import utilsJob2.CustomKey;
+import utilsJob2.CustomValues;
+
 
 public class SecondReducer extends Reducer<CustomKey, CustomValues, Text, Text> {
 	
