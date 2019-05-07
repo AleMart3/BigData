@@ -78,21 +78,20 @@ public class Main {
 
 		job3.setJarByClass(Main.class);
 
-		MultipleInputs.addInputPath(job1, new Path("input/FirstTable"),TextInputFormat.class, MapperFirstTable.class);
-		MultipleInputs.addInputPath(job1, new Path("input/SecondTable"),TextInputFormat.class, MapperSecondTable.class);
+		job3.setMapperClass(ThirdMapper.class);
 
-		job1.setReducerClass(ReducerJoin.class);
+		//job3.setReducerClass(ReducerJoin.class);
 
+		FileInputFormat.addInputPath(job3, new Path("output_job3/secondMapReduce"));
+		FileOutputFormat.setOutputPath(job3, new Path("output_job3/thirdMapReduce"));
 
-		FileOutputFormat.setOutputPath(job1, new Path("output_job3/firstMapReduce"));
+		job3.setMapOutputKeyClass(Text.class);
+		job3.setMapOutputValueClass(ThirdMapperCustomValues.class);
 
-		job1.setMapOutputKeyClass(Text.class);
-		job1.setMapOutputValueClass(Text.class);
+		//job3.setOutputKeyClass(Text.class);
+		//job3.setOutputValueClass(Text.class);
 
-		job1.setOutputKeyClass(Text.class);
-		job1.setOutputValueClass(Text.class);
-
-		job1.waitForCompletion(true);
+		job3.waitForCompletion(true);
         long end = System.currentTimeMillis();
 
     	NumberFormat formatter = new DecimalFormat("#0.000");
