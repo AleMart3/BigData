@@ -15,12 +15,12 @@ public class SecondReducer extends Reducer<CustomKey, CustomValues, Text, Text> 
 	private long inizioAnno;
 	private long fineAnno;
 
-	public void reduce(CustomKey key, Iterable<CustomValues> values, Context context) throws IOException, InterruptedException {
+	public void reduce(CustomKey key, Iterable<CustomValues> values, Context context) throws IOException, InterruptedException{
 
 		DoubleWritable firstClose = new DoubleWritable();
 		DoubleWritable lastClose = new DoubleWritable(); 
 		
-		int cont = 0; 
+		double cont = 0; 
 
 		for(CustomValues value: values) {
 
@@ -36,19 +36,19 @@ public class SecondReducer extends Reducer<CustomKey, CustomValues, Text, Text> 
 			aggiornaMassimo(time); 
 
 			if (inizioAnno == time) {
-				firstClose.set(value.getClose().get());
+				firstClose.set((double) value.getClose().get());
 			}
 
 			if (fineAnno == time) {
 				fineAnno = time;
-				lastClose.set(value.getClose().get());
+				lastClose.set((double) value.getClose().get());
 			}
 
 		}
 
-		Double diff_percent = incrementoPercentuale(firstClose.get(),lastClose.get());
+		double diff_percent = incrementoPercentuale(firstClose.get(),lastClose.get());
 
-		context.write(new Text(key.getNome() + ", " + key.getSettore()), new Text(","+key.getAnno() +", "+  diff_percent));
+		context.write(new Text(key.getNome() + ", " + key.getSettore()), new Text(","+key.getAnno() +", "+  (int)diff_percent));
 
 	}
 	
