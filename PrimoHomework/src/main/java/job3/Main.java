@@ -80,7 +80,7 @@ public class Main {
 
 		job3.setMapperClass(ThirdMapper.class);
 
-		//job3.setReducerClass(ReducerJoin.class);
+		job3.setReducerClass(ThirdReducer.class);
 
 		FileInputFormat.addInputPath(job3, new Path("output_job3/secondMapReduce"));
 		FileOutputFormat.setOutputPath(job3, new Path("output_job3/thirdMapReduce"));
@@ -88,8 +88,8 @@ public class Main {
 		job3.setMapOutputKeyClass(Text.class);
 		job3.setMapOutputValueClass(ThirdMapperCustomValues.class);
 
-		//job3.setOutputKeyClass(Text.class);
-		//job3.setOutputValueClass(Text.class);
+		job3.setOutputKeyClass(Text.class);
+		job3.setOutputValueClass(Text.class);
 
 		job3.waitForCompletion(true);
         long end = System.currentTimeMillis();
