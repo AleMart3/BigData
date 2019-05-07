@@ -48,7 +48,7 @@ public class SecondReducer extends Reducer<CustomKey, CustomValues, Text, Text> 
 
 		Double diff_percent = incrementoPercentuale(firstClose.get(),lastClose.get());
 
-		context.write(new Text(key.getNome() + ", " + key.getSettore()), new Text("Anno: " + key.getAnno() + " diff_percent: "+ diff_percent+ "%"));
+		context.write(new Text(key.getNome() + ", " + key.getSettore()), new Text(","+key.getAnno() +", "+  diff_percent));
 
 	}
 	

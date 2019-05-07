@@ -69,10 +69,35 @@ public class Main {
 		job2.setOutputValueClass(Text.class);
 
 		job2.waitForCompletion(true);
+           	
+    	
+    	// =================== Job3 ===================
+    	
+    	
+		Job job3 = new Job(new Configuration(), "Main");
+
+		job3.setJarByClass(Main.class);
+
+		MultipleInputs.addInputPath(job1, new Path("input/FirstTable"),TextInputFormat.class, MapperFirstTable.class);
+		MultipleInputs.addInputPath(job1, new Path("input/SecondTable"),TextInputFormat.class, MapperSecondTable.class);
+
+		job1.setReducerClass(ReducerJoin.class);
+
+
+		FileOutputFormat.setOutputPath(job1, new Path("output_job3/firstMapReduce"));
+
+		job1.setMapOutputKeyClass(Text.class);
+		job1.setMapOutputValueClass(Text.class);
+
+		job1.setOutputKeyClass(Text.class);
+		job1.setOutputValueClass(Text.class);
+
+		job1.waitForCompletion(true);
         long end = System.currentTimeMillis();
 
     	NumberFormat formatter = new DecimalFormat("#0.000");
     	System.out.print("Execution time is " + formatter.format((end - start) / 1000d/60) + " min\n");
+    	
 		
 		
 	}
