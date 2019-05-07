@@ -12,8 +12,9 @@ public class MapperFirstTable extends Mapper <LongWritable, Text, Text, Text> {
 
 		String[] line = value.toString().split("[,]");
 		String campi = "";
-		if (line.length == 6 )
-			campi = line[2]+ " " + line[3] + ", " + line[4];
+		if (line.length == 6 ) {
+			String nome = (line[2]+ " " + line[3]).trim();
+			campi = (nome).trim().substring(1, nome.length()-2) + ", " + line[4];}
 		else 
 			campi = line[2] + ", " + line[3];
 		
