@@ -11,17 +11,18 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import utilsJob2.Costanti_SecondMapper;
-import utilsJob2.CustomKey;
+import utilsJob2.CustomKey2;
 import utilsJob2.CustomValues;
 
 
-public class SecondMapper extends Mapper <LongWritable, Text, CustomKey, CustomValues>{
+public class SecondMapper extends Mapper <LongWritable, Text, CustomKey2, CustomValues>{
 
 
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
 
 		String[] line = value.toString().split("[,]");
 
+		String ticker = line[Costanti_SecondMapper.ticker];
 		String settore= line[Costanti_SecondMapper.settore];
 		String data= line[Costanti_SecondMapper.data];
 		Double close= Double.parseDouble(line[Costanti_SecondMapper.close]);
@@ -34,7 +35,7 @@ public class SecondMapper extends Mapper <LongWritable, Text, CustomKey, CustomV
 		try {
 			LocalDate date = LocalDate.parse(data, format);
 			int year= date.getYear();
-			context.write(new CustomKey(new Text(settore),new IntWritable(year)),new CustomValues(new Text(data),
+			context.write(new CustomKey2(new Text(settore),new IntWritable(year), new Text(ticker)),new CustomValues(new Text(data),
 			new DoubleWritable(close),new DoubleWritable(volume)));
 
 		}catch (Exception e) {

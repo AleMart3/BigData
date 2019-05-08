@@ -15,6 +15,7 @@ public class CustomValues implements WritableComparable<CustomValues>{
 	private DoubleWritable volume;
 	
 	
+	
 	public CustomValues() {
 	}
 	

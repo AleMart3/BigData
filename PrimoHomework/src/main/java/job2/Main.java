@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import utilsJob2.CustomKey;
+import utilsJob2.CustomKey2;
 import utilsJob2.CustomValues;
 
 public class Main {
@@ -50,13 +50,12 @@ public class Main {
 		job2.setJarByClass(Main.class);
 		
 		job2.setMapperClass(SecondMapper.class);
-				
 		job2.setReducerClass(SecondReducer.class);
 
 		FileInputFormat.addInputPath(job2, new Path("output_job2/firstMapReduce"));
 		FileOutputFormat.setOutputPath(job2, new Path("output_job2/secondMapReduce"));
 		
-		job2.setMapOutputKeyClass(CustomKey.class);
+		job2.setMapOutputKeyClass(CustomKey2.class);
 		job2.setMapOutputValueClass(CustomValues.class);
 
 		job2.setOutputKeyClass(Text.class);
