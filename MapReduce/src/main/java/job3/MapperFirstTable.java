@@ -13,16 +13,26 @@ public class MapperFirstTable extends Mapper <LongWritable, Text, Text, Text> {
 		if(key.get()==0) return;
 
 		String[] line = value.toString().split("[,]");
-		String campi = "";
-		if (line.length == 6 ) {
-			String nome = (line[2]+ " " + line[3]).trim();
-			campi = (nome).trim().substring(1, nome.length()-2) + ", " + line[4];}
-		else 
-			campi = line[2] + ", " + line[3];
-		
+		String campi = campi(line);
+
 		context.write(new Text(line[Costanti_FirstTable.ticker]), new Text("firstTable\t" + campi));
 
 	}
+
+	private String campi(String[] line) {
+
+		String campi = ""; 
+		if(line.length == 7 | (line.length == 6 && line[2].contains(" \" "))){
+			String nome = (line[2]+ " " + line[3]).trim();
+			campi = (nome).trim().substring(1, nome.length()-2) + ", " + line[4];
+		} else {
+			campi = line[2] + ", " + line[3];	
+		}
+
+		return campi; 
+
+	}
+
 
 
 }
