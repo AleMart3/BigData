@@ -1,0 +1,1 @@
+hive -f '/home/alex/Scrivania/Primo_Homework/Esercizi_Hive/job1/hql.hql'
