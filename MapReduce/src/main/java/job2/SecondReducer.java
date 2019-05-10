@@ -74,12 +74,17 @@ public class SecondReducer extends Reducer<CustomKey2, CustomValues, Text, Text>
 	@Override	
 	protected void cleanup(Context context) throws IOException, InterruptedException{
 
-		double totaleVolumi = 0.0; 
+ 		double totaleVolumi = 0.0; 
 		int contDefinitivo = 0; 
 		double incrementoSettore = 0; 
 		double sommaQuot = 0.0; 
 
 		for (CustomKey key : map.keySet()){
+			 totaleVolumi = 0.0; 
+			 contDefinitivo = 0; 
+			 incrementoSettore = 0; 
+			 sommaQuot = 0.0;
+			
 			for (Text el : map.get(key)){
 				
 				String[] split = el.toString().split("[,]");

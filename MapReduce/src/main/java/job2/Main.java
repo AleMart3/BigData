@@ -26,8 +26,8 @@ public class Main {
 
 		job.setJarByClass(Main.class);
 		
-		MultipleInputs.addInputPath(job, new Path("input/FirstTable"),TextInputFormat.class, MapperFirstTable.class);
-		MultipleInputs.addInputPath(job, new Path("input/SecondTable"),TextInputFormat.class, MapperSecondTable.class);
+		MultipleInputs.addInputPath(job, new Path("input/historical_stocks.csv"),TextInputFormat.class, MapperFirstTable.class);
+		MultipleInputs.addInputPath(job, new Path("input/historical_stock_prices.csv"),TextInputFormat.class, MapperSecondTable.class);
 				
 				
 		job.setReducerClass(ReducerJoin.class);
