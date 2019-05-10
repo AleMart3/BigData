@@ -1,0 +1,33 @@
+
+
+"Alessandro"	2016	settore1	100
+"Alessandro"	2017	settore1	300
+"Alessandro"	2018	settore1	33
+"giorgia inc."	2016	settore2	100
+"giorgia inc."	2017	settore2	300
+"giorgia inc."	2018	settore2	33
+
+alessandro settore1 100 300 33
+giorgia settore2 100 300 33
+
+Join nome, settore1
+
+"Alessandro"	2016	settore1	100			"Alessandro"	2016	settore1	100
+"Alessandro"	2017	settore1	300			"Alessandro"	2017	settore1	300
+"Alessandro"	2018	settore1	33      		"Alessandro"	2018	settore1	33 
+"Alessandro"	2016	settore1	100			"Alessandro"	2017	settore1	300
+"Alessandro"	2017	settore1	300			"Alessandro"	2016	settore1	100
+"Alessandro"	2018	settore1	33      		"Alessandro"	2018	settore1	33 
+
+
+
+"giorgia inc."	"Alessandro"	2016	100
+"Alessandro"	"giorgia inc."	2016	100
+
+"giorgia inc."	"Alessandro"	2017	300
+"Alessandro"	"giorgia inc."	2017	300
+
+"giorgia inc."	"Alessandro"	2018	33
+"Alessandro"	"giorgia inc."	2018	33
+
+
