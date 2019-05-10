@@ -22,7 +22,7 @@ public class MapperFirstTable extends Mapper <LongWritable, Text, Text, Text> {
 	private String campi(String[] line) {
 
 		String campi = ""; 
-		if(line.length == 7 | (line.length == 6 && line[2].contains(" \" "))){
+		if(line.length == 7 | (line.length == 6 && line[2].contains((" \" ").trim()))){
 			String nome = (line[2]+ " " + line[3]).trim();
 			campi = (nome).trim().substring(1, nome.length()-2) + ", " + line[4];
 		} else {
