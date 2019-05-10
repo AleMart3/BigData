@@ -1,0 +1,195 @@
+BASIC INDUSTRIES	Anno: 2004 Volume complessivo: 3.0767395827E10 Incremento Percentuale: 7268.834833661559% Quotazione media:19.657589234397317
+BASIC INDUSTRIES	Anno: 2005 Volume complessivo: 3.7457588379E10 Incremento Percentuale: 3729.2844585832845% Quotazione media:28.28286369872514
+BASIC INDUSTRIES	Anno: 2006 Volume complessivo: 5.0413342778E10 Incremento Percentuale: 5631.032735941602% Quotazione media:44.4235624911579
+BASIC INDUSTRIES	Anno: 2007 Volume complessivo: 6.7640775192E10 Incremento Percentuale: 5997.157300247116% Quotazione media:54.09313340071576
+BASIC INDUSTRIES	Anno: 2008 Volume complessivo: 1.04336790359E11 Incremento Percentuale: -7821.733632046339% Quotazione media:39.99813107884423
+BASIC INDUSTRIES	Anno: 2009 Volume complessivo: 1.13161759706E11 Incremento Percentuale: 15806.092638075463% Quotazione media:25.697429893648433
+BASIC INDUSTRIES	Anno: 2010 Volume complessivo: 9.6267427694E10 Incremento Percentuale: 6644.414537134267% Quotazione media:32.35048565403827
+BASIC INDUSTRIES	Anno: 2011 Volume complessivo: 9.3277620675E10 Incremento Percentuale: -2359.2070636881476% Quotazione media:42.74221191454349
+BASIC INDUSTRIES	Anno: 2012 Volume complessivo: 7.9648935208E10 Incremento Percentuale: 1727.4984001262062% Quotazione media:42.37323823965484
+BASIC INDUSTRIES	Anno: 2013 Volume complessivo: 8.1167036326E10 Incremento Percentuale: 4166.324043901146% Quotazione media:133.94620746195034
+BASIC INDUSTRIES	Anno: 2014 Volume complessivo: 8.2010502666E10 Incremento Percentuale: -783.6583789089837% Quotazione media:109.43928937069494
+BASIC INDUSTRIES	Anno: 2015 Volume complessivo: 9.5592658398E10 Incremento Percentuale: 30371.29782857462% Quotazione media:40.48498101082914
+BASIC INDUSTRIES	Anno: 2016 Volume complessivo: 1.20096921114E11 Incremento Percentuale: 12121.698147678442% Quotazione media:31.397759367579244
+BASIC INDUSTRIES	Anno: 2017 Volume complessivo: 1.00051884333E11 Incremento Percentuale: 4357.032446376619% Quotazione media:35.55569666265143
+BASIC INDUSTRIES	Anno: 2018 Volume complessivo: 6.1239875499E10 Incremento Percentuale: -1065.359154507983% Quotazione media:37.81695023980435
+CAPITAL GOODS	Anno: 2004 Volume complessivo: 4.2642420682E10 Incremento Percentuale: 9218.630020825784% Quotazione media:27.49989576648802
+CAPITAL GOODS	Anno: 2005 Volume complessivo: 4.2828857449E10 Incremento Percentuale: 2432.872340017462% Quotazione media:30.625832013784827
+CAPITAL GOODS	Anno: 2006 Volume complessivo: 5.1749654684E10 Incremento Percentuale: 5769.657581099858% Quotazione media:31.729458620951384
+CAPITAL GOODS	Anno: 2007 Volume complessivo: 6.5271537325E10 Incremento Percentuale: 3889.0468189065123% Quotazione media:35.4488069052728
+CAPITAL GOODS	Anno: 2008 Volume complessivo: 9.0216887556E10 Incremento Percentuale: -12285.326729590515% Quotazione media:28.11070955579296
+CAPITAL GOODS	Anno: 2009 Volume complessivo: 9.6803739926E10 Incremento Percentuale: 20275.441141831954% Quotazione media:19.903486075594603
+CAPITAL GOODS	Anno: 2010 Volume complessivo: 9.0763630698E10 Incremento Percentuale: 9828.859282675665% Quotazione media:25.5774492203144
+CAPITAL GOODS	Anno: 2011 Volume complessivo: 8.993998717E10 Incremento Percentuale: -4239.9917960245775% Quotazione media:28.76126210698626
+CAPITAL GOODS	Anno: 2012 Volume complessivo: 7.6821481295E10 Incremento Percentuale: 7481.103256789865% Quotazione media:29.118293446691315
+CAPITAL GOODS	Anno: 2013 Volume complessivo: 7.3496814757E10 Incremento Percentuale: 13895.51886459395% Quotazione media:36.53692673403182
+CAPITAL GOODS	Anno: 2014 Volume complessivo: 7.0525225308E10 Incremento Percentuale: 1214.66685148298% Quotazione media:42.847836783745514
+CAPITAL GOODS	Anno: 2015 Volume complessivo: 7.2871030811E10 Incremento Percentuale: 144945.34291943558% Quotazione media:42.59790690495322
+CAPITAL GOODS	Anno: 2016 Volume complessivo: 7.4995759977E10 Incremento Percentuale: 9176.61622402218% Quotazione media:42.776354079364204
+CAPITAL GOODS	Anno: 2017 Volume complessivo: 6.7007410673E10 Incremento Percentuale: 7232.960649646893% Quotazione media:55.05270587386024
+CAPITAL GOODS	Anno: 2018 Volume complessivo: 4.814658233E10 Incremento Percentuale: 2000.2489262075478% Quotazione media:61.79440332541768
+CONSUMER DURABLES	Anno: 2004 Volume complessivo: 1.0057518399E10 Incremento Percentuale: 3022.1218426110636% Quotazione media:22.704145573729257
+CONSUMER DURABLES	Anno: 2005 Volume complessivo: 1.0096843252E10 Incremento Percentuale: 61.47004139465105% Quotazione media:23.613072315948816
+CONSUMER DURABLES	Anno: 2006 Volume complessivo: 1.1608111147E10 Incremento Percentuale: 1605.6887363212234% Quotazione media:24.911391254861137
+CONSUMER DURABLES	Anno: 2007 Volume complessivo: 1.488891827E10 Incremento Percentuale: 303.817513760628% Quotazione media:26.579614367969135
+CONSUMER DURABLES	Anno: 2008 Volume complessivo: 1.9350179317E10 Incremento Percentuale: -4024.272092679288% Quotazione media:22.224244186469843
+CONSUMER DURABLES	Anno: 2009 Volume complessivo: 1.7702234464E10 Incremento Percentuale: 7409.871041527054% Quotazione media:17.720038996612942
+CONSUMER DURABLES	Anno: 2010 Volume complessivo: 1.4737880426E10 Incremento Percentuale: 2410.9541837574748% Quotazione media:22.803888072930352
+CONSUMER DURABLES	Anno: 2011 Volume complessivo: 1.542630438E10 Incremento Percentuale: -101.46211086572586% Quotazione media:23.286402215249765
+CONSUMER DURABLES	Anno: 2012 Volume complessivo: 1.3154769401E10 Incremento Percentuale: 2171.203484829639% Quotazione media:23.351258611526788
+CONSUMER DURABLES	Anno: 2013 Volume complessivo: 1.2578799552E10 Incremento Percentuale: 5295.795506239044% Quotazione media:35.35079082928178
+CONSUMER DURABLES	Anno: 2014 Volume complessivo: 1.3010046184E10 Incremento Percentuale: 2038.6149994264638% Quotazione media:49.30246528006961
+CONSUMER DURABLES	Anno: 2015 Volume complessivo: 1.2718976138E10 Incremento Percentuale: -255.56544933970216% Quotazione media:37.382855608106695
+CONSUMER DURABLES	Anno: 2016 Volume complessivo: 1.4884253792E10 Incremento Percentuale: 2731.317592828376% Quotazione media:35.68637639254126
+CONSUMER DURABLES	Anno: 2017 Volume complessivo: 1.4383518634E10 Incremento Percentuale: 15066.71603842824% Quotazione media:39.77336734600471
+CONSUMER DURABLES	Anno: 2018 Volume complessivo: 1.1324047804E10 Incremento Percentuale: 2598.6904779254064% Quotazione media:40.34654748941597
+CONSUMER NON-DURABLES	Anno: 2004 Volume complessivo: 2.804226368E10 Incremento Percentuale: 3681.128430736476% Quotazione media:29.727524987153874
+CONSUMER NON-DURABLES	Anno: 2005 Volume complessivo: 3.4156900575E10 Incremento Percentuale: 1791.3942003612024% Quotazione media:26.16217261672889
+CONSUMER NON-DURABLES	Anno: 2006 Volume complessivo: 4.3184558687E10 Incremento Percentuale: 3816.7637512320853% Quotazione media:29.28599849953745
+CONSUMER NON-DURABLES	Anno: 2007 Volume complessivo: 5.157431831E10 Incremento Percentuale: 215.11927716654657% Quotazione media:33.02399044386012
+CONSUMER NON-DURABLES	Anno: 2008 Volume complessivo: 7.0424642264E10 Incremento Percentuale: -5906.970361174816% Quotazione media:23.501965095907476
+CONSUMER NON-DURABLES	Anno: 2009 Volume complessivo: 6.2359585447E10 Incremento Percentuale: 12279.402429238127% Quotazione media:19.02873327709167
+CONSUMER NON-DURABLES	Anno: 2010 Volume complessivo: 5.80975145E10 Incremento Percentuale: 4410.721958617692% Quotazione media:24.840896372817692
+CONSUMER NON-DURABLES	Anno: 2011 Volume complessivo: 5.67829923E10 Incremento Percentuale: -335.30884387884487% Quotazione media:27.683669930752195
+CONSUMER NON-DURABLES	Anno: 2012 Volume complessivo: 5.11518117E10 Incremento Percentuale: 3119.403975231467% Quotazione media:29.79909680479683
+CONSUMER NON-DURABLES	Anno: 2013 Volume complessivo: 4.58126413E10 Incremento Percentuale: 6121.329749032352% Quotazione media:36.02858021961976
+CONSUMER NON-DURABLES	Anno: 2014 Volume complessivo: 4.8751849237E10 Incremento Percentuale: 1404.5748209026083% Quotazione media:39.36113305592234
+CONSUMER NON-DURABLES	Anno: 2015 Volume complessivo: 5.2762555008E10 Incremento Percentuale: -692.1765611340335% Quotazione media:40.54247894535282
+CONSUMER NON-DURABLES	Anno: 2016 Volume complessivo: 5.6591350547E10 Incremento Percentuale: 2782.8939741124163% Quotazione media:39.35617958431692
+CONSUMER NON-DURABLES	Anno: 2017 Volume complessivo: 5.8380768948E10 Incremento Percentuale: 1827.8911952574813% Quotazione media:41.04950327447033
+CONSUMER NON-DURABLES	Anno: 2018 Volume complessivo: 4.2212566071E10 Incremento Percentuale: 2271.533591934178% Quotazione media:42.52822902009216
+CONSUMER SERVICES	Anno: 2004 Volume complessivo: 9.8440715492E10 Incremento Percentuale: 11078.199853032596% Quotazione media:39.10409861501838
+CONSUMER SERVICES	Anno: 2005 Volume complessivo: 9.7636202423E10 Incremento Percentuale: 4507.110459658475% Quotazione media:56.80403797896612
+CONSUMER SERVICES	Anno: 2006 Volume complessivo: 1.07402772889E11 Incremento Percentuale: 8938.941767594799% Quotazione media:68.67225903550492
+CONSUMER SERVICES	Anno: 2007 Volume complessivo: 1.42165024633E11 Incremento Percentuale: -2159.402797832963% Quotazione media:81.95312387183108
+CONSUMER SERVICES	Anno: 2008 Volume complessivo: 2.02000505919E11 Incremento Percentuale: -18473.493859815004% Quotazione media:52.16818656102594
+CONSUMER SERVICES	Anno: 2009 Volume complessivo: 2.26878670699E11 Incremento Percentuale: 29870.657991970722% Quotazione media:48.71813151583876
+CONSUMER SERVICES	Anno: 2010 Volume complessivo: 2.06345035694E11 Incremento Percentuale: 13531.219850942563% Quotazione media:107.6124881712072
+CONSUMER SERVICES	Anno: 2011 Volume complessivo: 1.98767356011E11 Incremento Percentuale: 30937.87823003412% Quotazione media:78.60089330629597
+CONSUMER SERVICES	Anno: 2012 Volume complessivo: 1.70579553908E11 Incremento Percentuale: 8599.08319008536% Quotazione media:54.4756647309962
+CONSUMER SERVICES	Anno: 2013 Volume complessivo: 1.72222544569E11 Incremento Percentuale: 38505.134969661% Quotazione media:63.830810629364876
+CONSUMER SERVICES	Anno: 2014 Volume complessivo: 1.91502304127E11 Incremento Percentuale: 55464.87778090476% Quotazione media:63.50436802750273
+CONSUMER SERVICES	Anno: 2015 Volume complessivo: 1.75911123944E11 Incremento Percentuale: 1243929.7011241915% Quotazione media:63.297843448737794
+CONSUMER SERVICES	Anno: 2016 Volume complessivo: 1.89340161593E11 Incremento Percentuale: 9007.391754921093% Quotazione media:60.27532540249641
+CONSUMER SERVICES	Anno: 2017 Volume complessivo: 1.94376020765E11 Incremento Percentuale: 8703.781044483581% Quotazione media:77.38525064586466
+CONSUMER SERVICES	Anno: 2018 Volume complessivo: 1.43474866035E11 Incremento Percentuale: 25483.366876263557% Quotazione media:47.151892825298425
+ENERGY	Anno: 2004 Volume complessivo: 4.71715531E10 Incremento Percentuale: 5467.326222097771% Quotazione media:43.74027176198643
+ENERGY	Anno: 2005 Volume complessivo: 6.666579755E10 Incremento Percentuale: 6364.531786128055% Quotazione media:66.29484903152019
+ENERGY	Anno: 2006 Volume complessivo: 7.809298974E10 Incremento Percentuale: 1305.8913509605788% Quotazione media:259.93558612782596
+ENERGY	Anno: 2007 Volume complessivo: 8.3525003955E10 Incremento Percentuale: 4152.377282121865% Quotazione media:245.4107621104158
+ENERGY	Anno: 2008 Volume complessivo: 1.34376825285E11 Incremento Percentuale: -7595.514885983281% Quotazione media:235.38270933168656
+ENERGY	Anno: 2009 Volume complessivo: 1.28294396544E11 Incremento Percentuale: 8368.626103849574% Quotazione media:101.1828137893235
+ENERGY	Anno: 2010 Volume complessivo: 1.14088132108E11 Incremento Percentuale: 6070.158855821726% Quotazione media:152.2919212587048
+ENERGY	Anno: 2011 Volume complessivo: 1.06612239262E11 Incremento Percentuale: 954.8388197555366% Quotazione media:242.3822430828443
+ENERGY	Anno: 2012 Volume complessivo: 9.5629332858E10 Incremento Percentuale: 6629.466322165195% Quotazione media:194.23206754826538
+ENERGY	Anno: 2013 Volume complessivo: 8.1600415563E10 Incremento Percentuale: 4878.612602001762% Quotazione media:229.78235884024707
+ENERGY	Anno: 2014 Volume complessivo: 1.06560824963E11 Incremento Percentuale: -4142.269604498037% Quotazione media:245.842023083636
+ENERGY	Anno: 2015 Volume complessivo: 1.37257164987E11 Incremento Percentuale: -7404.341831840311% Quotazione media:172.43978566501906
+ENERGY	Anno: 2016 Volume complessivo: 1.54175022878E11 Incremento Percentuale: 19017.106188608464% Quotazione media:87.5611962794683
+ENERGY	Anno: 2017 Volume complessivo: 1.38420937826E11 Incremento Percentuale: 673.7896546736995% Quotazione media:37.36079825035285
+ENERGY	Anno: 2018 Volume complessivo: 1.01928640574E11 Incremento Percentuale: 1961.751236543481% Quotazione media:29.236622468376364
+FINANCE	Anno: 2004 Volume complessivo: 4.4979537816E10 Incremento Percentuale: 10221.318413070157% Quotazione media:138.72628717180496
+FINANCE	Anno: 2005 Volume complessivo: 4.9407020954E10 Incremento Percentuale: 4626.887990762237% Quotazione media:138.83052695829232
+FINANCE	Anno: 2006 Volume complessivo: 5.7645448704E10 Incremento Percentuale: 9306.907473893369% Quotazione media:149.1963986266207
+FINANCE	Anno: 2007 Volume complessivo: 1.01589497287E11 Incremento Percentuale: -6689.727130835429% Quotazione media:69.71869781038374
+FINANCE	Anno: 2008 Volume complessivo: 2.01248375464E11 Incremento Percentuale: -17035.421733084124% Quotazione media:43.06860307518836
+FINANCE	Anno: 2009 Volume complessivo: 3.32408827136E11 Incremento Percentuale: 17644.008250385592% Quotazione media:27.37901028555074
+FINANCE	Anno: 2010 Volume complessivo: 2.2629524374E11 Incremento Percentuale: 4614257.582197321% Quotazione media:67.87852684668448
+FINANCE	Anno: 2011 Volume complessivo: 2.27354131069E11 Incremento Percentuale: -5462.703147031357% Quotazione media:63.97813256615513
+FINANCE	Anno: 2012 Volume complessivo: 1.97672931016E11 Incremento Percentuale: 14715.308336131571% Quotazione media:45.47435264653333
+FINANCE	Anno: 2013 Volume complessivo: 1.57690535699E11 Incremento Percentuale: 22024.720102530246% Quotazione media:202.98853673857354
+FINANCE	Anno: 2014 Volume complessivo: 1.39964737502E11 Incremento Percentuale: 25801.96887970009% Quotazione media:223.0889052963477
+FINANCE	Anno: 2015 Volume complessivo: 1.46254480644E11 Incremento Percentuale: 118383.40162736688% Quotazione media:94.0302458374058
+FINANCE	Anno: 2016 Volume complessivo: 1.72624357816E11 Incremento Percentuale: 23296.058809027185% Quotazione media:62.69708493064569
+FINANCE	Anno: 2017 Volume complessivo: 1.4271158924E11 Incremento Percentuale: 11102.14352045595% Quotazione media:48.91317353853031
+FINANCE	Anno: 2018 Volume complessivo: 9.6806723197E10 Incremento Percentuale: 3868.693741338014% Quotazione media:41.319502236776664
+HEALTH CARE	Anno: 2004 Volume complessivo: 6.3110406513E10 Incremento Percentuale: 4567.140474227083% Quotazione media:433.81778886413997
+HEALTH CARE	Anno: 2005 Volume complessivo: 6.3778687627E10 Incremento Percentuale: 3935.9803125357435% Quotazione media:416.56616867207833
+HEALTH CARE	Anno: 2006 Volume complessivo: 7.2928972539E10 Incremento Percentuale: 4706.460976972519% Quotazione media:419.00727104027146
+HEALTH CARE	Anno: 2007 Volume complessivo: 8.7170851524E10 Incremento Percentuale: 1758.697684949219% Quotazione media:177.90312547771853
+HEALTH CARE	Anno: 2008 Volume complessivo: 1.04076182275E11 Incremento Percentuale: -12687.459646459814% Quotazione media:68.40986489381834
+HEALTH CARE	Anno: 2009 Volume complessivo: 1.08767259654E11 Incremento Percentuale: 42342.19985233194% Quotazione media:56.28222238898266
+HEALTH CARE	Anno: 2010 Volume complessivo: 1.0316651319E11 Incremento Percentuale: 11093.802450181249% Quotazione media:67.35590235687742
+HEALTH CARE	Anno: 2011 Volume complessivo: 1.01354227061E11 Incremento Percentuale: -2180.629516616914% Quotazione media:52.01636633416355
+HEALTH CARE	Anno: 2012 Volume complessivo: 9.0016462879E10 Incremento Percentuale: 9046.353235674216% Quotazione media:45.34315591327964
+HEALTH CARE	Anno: 2013 Volume complessivo: 1.00831756225E11 Incremento Percentuale: 24384.01713327732% Quotazione media:57.88317612298831
+HEALTH CARE	Anno: 2014 Volume complessivo: 1.08986785858E11 Incremento Percentuale: 104337.11516838848% Quotazione media:62.386282849862106
+HEALTH CARE	Anno: 2015 Volume complessivo: 1.25554487028E11 Incremento Percentuale: 124847.38751077853% Quotazione media:55.20400052090314
+HEALTH CARE	Anno: 2016 Volume complessivo: 1.37133138552E11 Incremento Percentuale: -6252.501668165495% Quotazione media:33.04288624735714
+HEALTH CARE	Anno: 2017 Volume complessivo: 1.43731223097E11 Incremento Percentuale: 27596.711493587096% Quotazione media:29.47204891490607
+HEALTH CARE	Anno: 2018 Volume complessivo: 1.08135044247E11 Incremento Percentuale: 7804.458353554943% Quotazione media:32.53066763087502
+MISCELLANEOUS	Anno: 2004 Volume complessivo: 1.8427942979E10 Incremento Percentuale: 3119.655408561466% Quotazione media:21.313258798557065
+MISCELLANEOUS	Anno: 2005 Volume complessivo: 2.0172692716E10 Incremento Percentuale: 210.04887726915686% Quotazione media:39.54776706008394
+MISCELLANEOUS	Anno: 2006 Volume complessivo: 2.2753346666E10 Incremento Percentuale: 3405.3704682318535% Quotazione media:43.166684713007484
+MISCELLANEOUS	Anno: 2007 Volume complessivo: 3.0537810228E10 Incremento Percentuale: 1636.0376259651187% Quotazione media:32.50247562031717
+MISCELLANEOUS	Anno: 2008 Volume complessivo: 4.5357011592E10 Incremento Percentuale: -3895.433633721868% Quotazione media:21.905212250695314
+MISCELLANEOUS	Anno: 2009 Volume complessivo: 3.9333381133E10 Incremento Percentuale: 9528.64939435597% Quotazione media:22.46075529181267
+MISCELLANEOUS	Anno: 2010 Volume complessivo: 3.5607063472E10 Incremento Percentuale: 2702.9499730465054% Quotazione media:28.0892784926208
+MISCELLANEOUS	Anno: 2011 Volume complessivo: 3.2044175109E10 Incremento Percentuale: -746.9294976934602% Quotazione media:31.80113322635923
+MISCELLANEOUS	Anno: 2012 Volume complessivo: 2.8333856517E10 Incremento Percentuale: 21110.395850155342% Quotazione media:30.11664922729685
+MISCELLANEOUS	Anno: 2013 Volume complessivo: 2.7208714081E10 Incremento Percentuale: 4891.636144747468% Quotazione media:37.39657021854224
+MISCELLANEOUS	Anno: 2014 Volume complessivo: 3.2106954887E10 Incremento Percentuale: 1080.1380269628512% Quotazione media:43.69146765199024
+MISCELLANEOUS	Anno: 2015 Volume complessivo: 3.0339739447E10 Incremento Percentuale: 299.5140206542077% Quotazione media:45.02107041384567
+MISCELLANEOUS	Anno: 2016 Volume complessivo: 3.4217247694E10 Incremento Percentuale: 2269.380239186741% Quotazione media:44.412326542367154
+MISCELLANEOUS	Anno: 2017 Volume complessivo: 3.2526143015E10 Incremento Percentuale: 3257.697560643209% Quotazione media:44.201338226313695
+MISCELLANEOUS	Anno: 2018 Volume complessivo: 2.4793547815E10 Incremento Percentuale: 1264.5667144963895% Quotazione media:62.409950431803004
+N/A	Anno: 2004 Volume complessivo: 3.1733968642E10 Incremento Percentuale: 8240.27081562558% Quotazione media:19.96436814167221
+N/A	Anno: 2005 Volume complessivo: 3.0680491603E10 Incremento Percentuale: 26.575327899381875% Quotazione media:22.066405526587328
+N/A	Anno: 2006 Volume complessivo: 1.45189017511E11 Incremento Percentuale: 5887.83657119602% Quotazione media:26.621233338013873
+N/A	Anno: 2007 Volume complessivo: 1.5854384431E11 Incremento Percentuale: -3779.1977818161754% Quotazione media:27.64356138264335
+N/A	Anno: 2008 Volume complessivo: 1.52539834436E11 Incremento Percentuale: -16185.723867737015% Quotazione media:21.774278075637277
+N/A	Anno: 2009 Volume complessivo: 1.79740098152E11 Incremento Percentuale: 14475.589023764764% Quotazione media:17.986794361943016
+N/A	Anno: 2010 Volume complessivo: 2.57543462937E11 Incremento Percentuale: 3395.2852279217395% Quotazione media:29.061403183478223
+N/A	Anno: 2011 Volume complessivo: 3.1562735413E11 Incremento Percentuale: -2612.591691466286% Quotazione media:26.87846464610445
+N/A	Anno: 2012 Volume complessivo: 3.58328693664E11 Incremento Percentuale: 4837.040497232875% Quotazione media:26.046472619743646
+N/A	Anno: 2013 Volume complessivo: 4.34889087533E11 Incremento Percentuale: 2705.7050050013654% Quotazione media:26.85290958377613
+N/A	Anno: 2014 Volume complessivo: 4.43615878897E11 Incremento Percentuale: 1139287.1218116514% Quotazione media:27.43068640039456
+N/A	Anno: 2015 Volume complessivo: 4.67703218E10 Incremento Percentuale: -6281.809268443604% Quotazione media:26.007607673732124
+N/A	Anno: 2016 Volume complessivo: 4.6511843051E10 Incremento Percentuale: 93180.55575935624% Quotazione media:38.73383290962844
+N/A	Anno: 2017 Volume complessivo: 4.0427789892E10 Incremento Percentuale: 67169.94408859796% Quotazione media:157.5960848995134
+N/A	Anno: 2018 Volume complessivo: 3.4418335078E10 Incremento Percentuale: 1066871.4741790213% Quotazione media:124.9923432273362
+PUBLIC UTILITIES	Anno: 2004 Volume complessivo: 2.8589711906E10 Incremento Percentuale: 3106.9329015123376% Quotazione media:42.244283983295176
+PUBLIC UTILITIES	Anno: 2005 Volume complessivo: 3.2038447002E10 Incremento Percentuale: 1501.5007603021202% Quotazione media:36.058430718979416
+PUBLIC UTILITIES	Anno: 2006 Volume complessivo: 3.9883074886E10 Incremento Percentuale: 2998.1599766548084% Quotazione media:26.618952813920146
+PUBLIC UTILITIES	Anno: 2007 Volume complessivo: 5.0256979051E10 Incremento Percentuale: 1059.214106586176% Quotazione media:32.50169283689038
+PUBLIC UTILITIES	Anno: 2008 Volume complessivo: 6.9203977327E10 Incremento Percentuale: -5351.864187653495% Quotazione media:26.948917721503943
+PUBLIC UTILITIES	Anno: 2009 Volume complessivo: 7.0087349201E10 Incremento Percentuale: 7834.849193284966% Quotazione media:21.80063109904323
+PUBLIC UTILITIES	Anno: 2010 Volume complessivo: 7.0396522365E10 Incremento Percentuale: 4053.969332786908% Quotazione media:71.36554434999552
+PUBLIC UTILITIES	Anno: 2011 Volume complessivo: 7.5219416736E10 Incremento Percentuale: -905.7583464919054% Quotazione media:140.10289137341857
+PUBLIC UTILITIES	Anno: 2012 Volume complessivo: 6.9648184996E10 Incremento Percentuale: 322410.06361439213% Quotazione media:132.73017037368965
+PUBLIC UTILITIES	Anno: 2013 Volume complessivo: 6.5102380365E10 Incremento Percentuale: 5199.103499206623% Quotazione media:109.27095992807567
+PUBLIC UTILITIES	Anno: 2014 Volume complessivo: 6.6291639646E10 Incremento Percentuale: 173522.2638417283% Quotazione media:96.26931208368882
+PUBLIC UTILITIES	Anno: 2015 Volume complessivo: 7.2338943715E10 Incremento Percentuale: 36569.181545995496% Quotazione media:119.05705558776533
+PUBLIC UTILITIES	Anno: 2016 Volume complessivo: 7.7484596855E10 Incremento Percentuale: 5365.528923068872% Quotazione media:142.92556626782155
+PUBLIC UTILITIES	Anno: 2017 Volume complessivo: 6.9388139944E10 Incremento Percentuale: 1932.989819307625% Quotazione media:122.12322188631454
+PUBLIC UTILITIES	Anno: 2018 Volume complessivo: 5.1024537253E10 Incremento Percentuale: 350474.04011547455% Quotazione media:51.84418011127061
+TECHNOLOGY	Anno: 2004 Volume complessivo: 2.23368677466E11 Incremento Percentuale: 7021.070015852949% Quotazione media:69.70110563959625
+TECHNOLOGY	Anno: 2005 Volume complessivo: 2.37984960404E11 Incremento Percentuale: 2983.079659930954% Quotazione media:32.14012697602002
+TECHNOLOGY	Anno: 2006 Volume complessivo: 2.62122136178E11 Incremento Percentuale: 5217.941508041663% Quotazione media:27.415752643577108
+TECHNOLOGY	Anno: 2007 Volume complessivo: 2.87003755938E11 Incremento Percentuale: 4165.79409530438% Quotazione media:42.218742480856015
+TECHNOLOGY	Anno: 2008 Volume complessivo: 3.41560370607E11 Incremento Percentuale: -17242.1578041615% Quotazione media:24.832774448206095
+TECHNOLOGY	Anno: 2009 Volume complessivo: 2.62961418022E11 Incremento Percentuale: 29362.552422904897% Quotazione media:19.061632398356217
+TECHNOLOGY	Anno: 2010 Volume complessivo: 2.65995298178E11 Incremento Percentuale: 11969.036381741196% Quotazione media:22.288489315607425
+TECHNOLOGY	Anno: 2011 Volume complessivo: 2.62795617165E11 Incremento Percentuale: -4356.122756077201% Quotazione media:28.03622149955135
+TECHNOLOGY	Anno: 2012 Volume complessivo: 2.42129346817E11 Incremento Percentuale: 7338.961890611503% Quotazione media:23.675929033844923
+TECHNOLOGY	Anno: 2013 Volume complessivo: 2.41294314787E11 Incremento Percentuale: 23264.226468758923% Quotazione media:28.543676647940295
+TECHNOLOGY	Anno: 2014 Volume complessivo: 2.13718777003E11 Incremento Percentuale: 64346.05215566577% Quotazione media:34.036890889446795
+TECHNOLOGY	Anno: 2015 Volume complessivo: 1.91661242445E11 Incremento Percentuale: 13679.262175501039% Quotazione media:33.9848251397627
+TECHNOLOGY	Anno: 2016 Volume complessivo: 2.00322257697E11 Incremento Percentuale: 191075.96397653528% Quotazione media:31.90636173964324
+TECHNOLOGY	Anno: 2017 Volume complessivo: 2.06308126975E11 Incremento Percentuale: 36645.853575641704% Quotazione media:38.17259705471394
+TECHNOLOGY	Anno: 2018 Volume complessivo: 1.55894080644E11 Incremento Percentuale: 52082.57274671577% Quotazione media:43.86740957618967
+TRANSPORTATION	Anno: 2004 Volume complessivo: 1.0146574E10 Incremento Percentuale: 1953.8705389052755% Quotazione media:3875.09863624273
+TRANSPORTATION	Anno: 2005 Volume complessivo: 1.17795505E10 Incremento Percentuale: 625.7589342700691% Quotazione media:6546.023289996812
+TRANSPORTATION	Anno: 2006 Volume complessivo: 1.57314589E10 Incremento Percentuale: 724.3849124862118% Quotazione media:4601.59876628527
+TRANSPORTATION	Anno: 2007 Volume complessivo: 2.26481039E10 Incremento Percentuale: 1010.3950879868729% Quotazione media:4028.5854687609935
+TRANSPORTATION	Anno: 2008 Volume complessivo: 3.40453237E10 Incremento Percentuale: -2635.1505183369136% Quotazione media:1876.2985562946167
+TRANSPORTATION	Anno: 2009 Volume complessivo: 3.21668756E10 Incremento Percentuale: 2104.455335338102% Quotazione media:419.3358372236049
+TRANSPORTATION	Anno: 2010 Volume complessivo: 2.51032518E10 Incremento Percentuale: 1583.8498573898182% Quotazione media:164.75943292272206
+TRANSPORTATION	Anno: 2011 Volume complessivo: 2.40181751E10 Incremento Percentuale: -1504.041213248188% Quotazione media:91.58842951034882
+TRANSPORTATION	Anno: 2012 Volume complessivo: 2.05000949E10 Incremento Percentuale: 720.100966726063% Quotazione media:76.24410309342095
+TRANSPORTATION	Anno: 2013 Volume complessivo: 2.04845269E10 Incremento Percentuale: 4329.953939498608% Quotazione media:88.79075188995279
+TRANSPORTATION	Anno: 2014 Volume complessivo: 2.40140451E10 Incremento Percentuale: 1053.2905122813956% Quotazione media:51.800322936979065
+TRANSPORTATION	Anno: 2015 Volume complessivo: 2.6978967802E10 Incremento Percentuale: -2245.6167387047167% Quotazione media:38.55247294917033
+TRANSPORTATION	Anno: 2016 Volume complessivo: 2.6396056641E10 Incremento Percentuale: 4298.150379237464% Quotazione media:182.52985818188077
+TRANSPORTATION	Anno: 2017 Volume complessivo: 2.4750549271E10 Incremento Percentuale: 1293.514279437272% Quotazione media:81.58107063923603
+TRANSPORTATION	Anno: 2018 Volume complessivo: 1.57823638E10 Incremento Percentuale: -466.2298006520986% Quotazione media:38.687121291895146
