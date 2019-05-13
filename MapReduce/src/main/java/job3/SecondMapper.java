@@ -10,16 +10,17 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import utilsJob3.CostantiSecondoMapper;
-import utilsJob3.CustomKey;
+import utilsJob3.CustomKey2;
 import utilsJob3.CustomValues;
 
 
-public class SecondMapper extends Mapper <LongWritable, Text, CustomKey, CustomValues> {
+public class SecondMapper extends Mapper <LongWritable, Text, CustomKey2, CustomValues> {
 
 	public void map(LongWritable key, Text value, Context context)throws IOException, InterruptedException {
 
 		String[] line = value.toString().split("[,]");
 
+		String ticker = line[CostantiSecondoMapper.ticker];
 		String nome = line[CostantiSecondoMapper.nome];
 		String settore = line[CostantiSecondoMapper.settore];
 		String data = line[CostantiSecondoMapper.data]; 
@@ -27,8 +28,8 @@ public class SecondMapper extends Mapper <LongWritable, Text, CustomKey, CustomV
 
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDate date = LocalDate.parse(data, format);
-		
-		context.write(new CustomKey(new Text(nome), new Text(settore), new IntWritable(date.getYear())), 
+
+		context.write(new CustomKey2(new Text(nome), new Text(settore), new Text(ticker), new IntWritable(date.getYear())), 
 				new CustomValues(new Text(data), new DoubleWritable(close)));
 
 	}
