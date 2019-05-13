@@ -1,1 +1,0 @@
-hive -f '/home/alex/Scrivania/Primo_Homework/Hive/job2/hql.hql'
