@@ -19,7 +19,7 @@ tblproperties ("skip.header.line.count"="1");
 LOAD DATA LOCAL INPATH './Scrivania/Primo_Homework/daily-historical-stock-prices-1970-2018/historical_stocks.csv' OVERWRITE INTO TABLE stocks_noparse;
 
 
-add jar /home/alex/Scrivania/Primo_Homework/Hive/job2/ParseRow.jar;
+add jar ./Scrivania/Primo_Homework/Hive/job2/ParseRow.jar;
 CREATE TEMPORARY FUNCTION ParseRow AS 'hive.ParseRow'; 
 
 create table if not exists ticker_settore as
