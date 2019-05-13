@@ -1,4 +1,4 @@
-# Prima Esercitazione Big Data
+# Primo Homework Big Data
 
 Si consideri il dataset Daily Historical Stock Price, che contiene l’andamento giornaliero di un’ampia selezione di azioni sulla borsa di New York (NYSE) e sul NASDAQ dal 1970 al 2018. Il dataset è formato da due file CSV. Ogni riga del primo (historical_stock_prices) ha i seguenti campi:
 * ticker: simbolo dell’azione
