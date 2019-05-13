@@ -41,9 +41,9 @@ public class ThirdMapper extends Mapper <LongWritable, Text, Text, ThirdMapperCu
 			for (CustomValues2 el : map.get(key)){
 			
 				switch(el.getData().toString()) {
-				case "2016": anno16 = el.getClose();
-				case "2017": anno17 = el.getClose();
-				case "2018": anno18 = el.getClose();
+				case "2016": anno16 = el.getClose(); break;
+				case "2017": anno17 = el.getClose(); break;
+				case "2018": anno18 = el.getClose(); break;
 				}
 			}
 			
