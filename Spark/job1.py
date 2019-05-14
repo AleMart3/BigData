@@ -25,9 +25,9 @@ text_file = sc.textFile("input/SecondTable")\
 
 counts = text_file.map(lambda line: (   (utils.getString(line,0),utils.getAnno(utils.getString(line,7))) ,
                                         (utils.getDouble(line,2),utils.getDouble(line,4),utils.getDouble(line,5),utils.getDouble(line,6)))  )\
-        .reduceByKey(lambda x,y: ((x[0]+y[0])/(1+1) ,  min(x[1] ,y[1]) , max(x[2],y[2])  , (x[3]+y[3] )  , (1+1 )  )).collect()
+        .reduceByKey(lambda x, y: ((x[0]+y[0])/(1+1) ,  min(x[1] ,y[1]) , max(x[2],y[2])  , (x[3]+y[3] )  , (1+1 )  )).collect()
+                            #ticker anno -> mediaChiusura, minlow, maxhigh, sommavolumi, conteggio
 
-#x,y sono due elementi
 
 
 print(counts)
