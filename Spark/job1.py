@@ -28,7 +28,7 @@ counts = text_file.map(lambda line: ((utils.getString(line,0),utils.getAnno(util
         .filter(lambda x : 1997 < x[0][1] < 2019) \
         .reduceByKey(lambda x , y: ((x[0]+y[0])/(1+1), min(x[1], y[1]), max(x[2],y[2]), (x[3]+y[3]), (1 + 1))) \
         .map(lambda x: (x[0][0], utils.flattuple((x[0][1], x[1]))))\
-        .reduceByKey(lambda x, y: (min(x[0],y[0])))
+       .reduceByKey(lambda x, y: [utils.minannoclose(x[0],y[0]), min(x[1],y[1]), max(x[2],y[2]), x[3]+y[3], x[4]+y[4]])
       #  .reduceByKey(lambda x, y: (min(x[0],y[0]), max(x[0],y[0]), min(x[2], y[2]), max(x[3],y[3]), sum(x[4],y[4]), sum(x[5],y[5]))).collect()
 
 print (counts.collect())

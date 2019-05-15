@@ -10,11 +10,20 @@ def getDouble(s, num):
 
 
 def flattuple(tuple):
-    list = [tuple[0]]
-    for tup in tuple[1]:
-            list.append(tup)
+    list = [(tuple[0], tuple[1][0])]
+    for i in range(1, 5):
+        list.append(tuple[1][i])
     return list
 
+def maxannoclose(tuple1, tuple2):
+    if tuple1[0] < tuple2[0]:
+        return tuple2
+    return tuple1
+
+def minannoclose(tuple1, tuple2):
+    if tuple1[0] > tuple2[0]:
+        return tuple2
+    return tuple1
 
 def getAnno(data):
     return (datetime.strptime(data, '%Y-%m-%d').year)
