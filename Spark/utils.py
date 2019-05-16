@@ -10,9 +10,10 @@ def getDouble(s, num):
 
 
 def flattuple(tuple):
-    list = [(tuple[0], tuple[1][0])]
-    for i in range(1, 5):
+    list = [(tuple[0], tuple[1][0]/tuple[1][4]), (tuple[0], tuple[1][0]/tuple[1][4])]
+    for i in range (1, 5):
         list.append(tuple[1][i])
+
     return list
 
 def maxannoclose(tuple1, tuple2):
@@ -46,16 +47,8 @@ def getAnnoMassimo(counts):
 
 
 def result(list):
-    annoMin = getAnnoMinimo(list)
-    annoMax = getAnnoMassimo(list)
-
-    for el in list:
-        if el[0] == annoMin:
-            closeMin = el[2]
-        if el[0] == annoMax:
-            closeMax = el[2]
-
-    return closeMax - closeMin, (closeMax/closeMin*100)-100
+    # restituisce differenza,       incremento percentuale,         minimo    massimo, media volumi
+    return [list[1][1]-list[0][1], (list[1][1]/list[0][1]*100)-100, list[2], list[3], list[4]/list[5]]
 
 
 

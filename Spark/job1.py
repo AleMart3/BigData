@@ -23,16 +23,22 @@ sc = SparkContext(appName="job1")
 text_file = sc.textFile("input/SecondTable")\
         .mapPartitionsWithIndex(lambda idx, it: islice(it, 1, None) if idx == 0 else it)
 
-counts = text_file.map(lambda line: ((utils.getString(line,0),utils.getAnno(utils.getString(line,7))),
-                                        (utils.getDouble(line,2),utils.getDouble(line,4),utils.getDouble(line,5),utils.getDouble(line,6)))  )\
-        .filter(lambda x : 1997 < x[0][1] < 2019) \
-        .reduceByKey(lambda x , y: ((x[0]+y[0])/(1+1), min(x[1], y[1]), max(x[2],y[2]), (x[3]+y[3]), (1 + 1))) \
-        .map(lambda x: (x[0][0], utils.flattuple((x[0][1], x[1]))))\
-       .reduceByKey(lambda x, y: [utils.minannoclose(x[0],y[0]), min(x[1],y[1]), max(x[2],y[2]), x[3]+y[3], x[4]+y[4]])
-      #  .reduceByKey(lambda x, y: (min(x[0],y[0]), max(x[0],y[0]), min(x[2], y[2]), max(x[3],y[3]), sum(x[4],y[4]), sum(x[5],y[5]))).collect()
+counts = text_file.map(lambda line: ((utils.getString(line, 0), utils.getAnno(utils.getString(line,7))),
+                                        (utils.getDouble(line, 2), utils.getDouble(line, 4),
+                                         utils.getDouble(line, 5), utils.getDouble(line, 6), 1)))\
+        .filter(lambda x: 1997 < x[0][1] < 2019) \
+        .reduceByKey(lambda x, y: (x[0]+y[0], min(x[1], y[1]), max(x[2], y[2]), x[3]+y[3], x[4] + y[4])) \
+        .map(lambda x: (x[0][0], utils.flattuple((x[0][1], x[1])))) \
+        .reduceByKey(lambda x, y: [utils.minannoclose(x[0],y[0]), utils.maxannoclose(x[1], y[1]),
+                                  min(x[2],y[2]), max(x[3],y[3]), x[4]+y[4], x[5]+y[5]]) \
+        .map(lambda x: (x[0], utils.result(x[1]))) \
+        .sortBy(lambda x: x[1][0], ascending=False).take(10)
 
-print (counts.collect())
+# (ticker) -> ((annominimo, close), (annomassimo, close), minimo low, max high, somma volumi, cont)
+# (ticker) -> (differenza, incremento, minimo, massimo, media volumi)
+#differenza close, incremento percentuale, media volumi
 
+print (counts)
 
 
 
