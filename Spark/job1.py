@@ -34,11 +34,12 @@ counts = text_file.map(lambda line: ((utils.getString(line, 0), utils.getAnno(ut
         .map(lambda x: (x[0], utils.result(x[1]))) \
         .sortBy(lambda x: x[1][0], ascending=False).take(10)
 
+sc.parallelize(counts).saveAsTextFile("output/output.txt")
+
 # (ticker) -> ((annominimo, close), (annomassimo, close), minimo low, max high, somma volumi, cont)
 # (ticker) -> (differenza, incremento, minimo, massimo, media volumi)
 #differenza close, incremento percentuale, media volumi
 
-print (counts)
 
 
 
