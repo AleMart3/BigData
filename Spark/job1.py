@@ -4,7 +4,7 @@
 # minimo low
 # massimo high
 # somma volume + conteggio
-import itertools
+
 import os
 from pyspark import SparkContext
 import utils as utils
@@ -13,7 +13,7 @@ import utils as utils
 from itertools import islice
 
 
-#os.system("rm -r output")
+os.system("rm -r output")
 
 
 sc = SparkContext(appName="job1")
@@ -34,7 +34,7 @@ counts = text_file.map(lambda line: ((utils.getString(line, 0), utils.getAnno(ut
         .map(lambda x: (x[0], utils.result(x[1]))) \
         .sortBy(lambda x: x[1][0], ascending=False).take(10)
 
-sc.parallelize(counts).saveAsTextFile("output/output.txt")
+sc.parallelize(counts).coalesce(1).saveAsTextFile("output/output.txt")
 
 # (ticker) -> ((annominimo, close), (annomassimo, close), minimo low, max high, somma volumi, cont)
 # (ticker) -> (differenza, incremento, minimo, massimo, media volumi)
