@@ -10,8 +10,8 @@ def getDouble(s, num):
 
 
 def flattuple(tuple):
-    list = [(tuple[0], tuple[1][0]/tuple[1][4]), (tuple[0], tuple[1][0]/tuple[1][4])]
-    for i in range (1, 5):
+    list = [(tuple[0], tuple[1][0]/tuple[1][4]), (tuple[0], tuple[1][0]/tuple[1][4])]  #tupla duplicata per calcolare successivamente anno minimo e massimo
+    for i in range (1, 5):                                                              #mi serve il valore duplicato
         list.append(tuple[1][i])
 
     return list
@@ -50,5 +50,6 @@ def result(list):
     # restituisce differenza,       incremento percentuale,         minimo    massimo, media volumi
     return [list[1][1]-list[0][1], (list[1][1]/list[0][1]*100)-100, list[2], list[3], list[4]/list[5]]
 
+#reduceByKey ticker -> ((annominimo, close), (annomassimo, close), minimo low, max high, somma volumi, cont)
 
 
