@@ -7,7 +7,7 @@
 
 import os
 from pyspark import SparkContext
-import utils as utils
+from job1 import utils as utils
 import time
 
 
@@ -26,14 +26,14 @@ sc = SparkContext(appName="job1")
 text_file = sc.textFile("input/historical_stock_prices.csv")\
         .mapPartitionsWithIndex(lambda idx, it: islice(it, 1, None) if idx == 0 else it)
 
-counts = text_file.map(lambda line: ((utils.getString(line, 0), utils.getAnno(utils.getString(line,7))),
+counts = text_file.map(lambda line: ((utils.getString(line, 0), utils.getAnno(utils.getString(line, 7))),
                                         (utils.getDouble(line, 2), utils.getDouble(line, 4),
                                          utils.getDouble(line, 5), utils.getDouble(line, 6), 1)))\
         .filter(lambda x: 1998 <= x[0][1] <= 2018)\
         .reduceByKey(lambda x, y: (x[0]+y[0], min(x[1], y[1]), max(x[2], y[2]), x[3]+y[3], x[4] + y[4])) \
         .map(lambda x: (x[0][0], utils.flattuple((x[0][1], x[1])))) \
-        .reduceByKey(lambda x, y: [utils.minannoclose(x[0],y[0]), utils.maxannoclose(x[1], y[1]),
-                                  min(x[2],y[2]), max(x[3],y[3]), x[4]+y[4], x[5]+y[5]]) \
+        .reduceByKey(lambda x, y: [utils.minannoclose(x[0], y[0]), utils.maxannoclose(x[1], y[1]),
+                                   min(x[2],y[2]), max(x[3],y[3]), x[4] + y[4], x[5] + y[5]]) \
         .map(lambda x: (x[0], utils.result(x[1]))) \
         .sortBy(lambda x: x[1][0], ascending=False).take(10)
 
