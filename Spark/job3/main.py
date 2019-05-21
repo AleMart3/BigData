@@ -29,6 +29,11 @@ first_table = sc.textFile("../input/FirstTable") \
                 .join(second_table)
 
 #(ticker, nome, settore, anno) -> (close, data)
+#reduce: calcolo minimo e massimo dell'anno
+#map: calcolo la differenza percentuale
+#reduce: sommo le differenze percentuali
+#map&reduce: (nome, settore) -> [(2016, diff), (2017, diff), (2018, diff)]
+#map: (2016, 2017, 2018) -> (nome, settore)
 one = first_table.map(lambda x: ((x[0], x[1][0][0], x[1][0][1], x[1][1][1]), [(x[1][1][2], x[1][1][0]), (x[1][1][2], x[1][1][0])])) \
                     .reduceByKey(lambda x, y: [utils.mindataclose(x[0], y[0]), utils.maxdataclose(x[1], y[1])]) \
                     .map(lambda x: ((x[0][1], x[0][2], x[0][3]), (x[1][1][1]/x[1][0][1]*100)-100)) \
@@ -37,6 +42,7 @@ one = first_table.map(lambda x: ((x[0], x[1][0][0], x[1][0][1], x[1][1][1]), [(x
                     .reduceByKey(lambda x, y: [utils.el2016(x[0], y[0]), utils.el2017(x[1], y[1]), utils.el2018(x[2], y[2])]) \
                     .map(lambda x: ((x[1][0], x[1][1], x[1][2]), x[0]))
 
+#join con se stesso + rimuovo colonne che hanno settore e nome uguale
 result = one.join(one) \
         .filter(lambda line: line[1][0][1] != line[1][1][1] and line[1][0][0] != line[1][1][0])
 
