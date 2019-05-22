@@ -1,19 +1,27 @@
 from datetime import datetime
 
+
 def el2016(tuple1, tuple2):
     if tuple2[0] == 2016:
         return tuple2
     return tuple1
+
 
 def el2017(tuple1, tuple2):
     if tuple2[0] == 2017:
         return tuple2
     return tuple1
 
+
 def el2018(tuple1, tuple2):
     if tuple2[0] == 2018:
         return tuple2
     return tuple1
+
+
+def tupla(tupla):
+    return (tupla[0][0], tupla[0][1], tupla[1])
+
 
 def sistemaValori(line):
     list = line.split(",")
@@ -27,8 +35,8 @@ def sistemaValori(line):
         campi.append(list[2])
         campi.append(list[3])
 
-    print (campi)
     return campi
+
 
 def maxdataclose(tuple1, tuple2):
     dataTupla1 = getData(tuple1[0])
@@ -53,8 +61,10 @@ def getString(s, num):
 def getDouble(s, num):
     return float(s.split(",")[num])
 
+
 def getAnno(data):
     return datetime.strptime(data, '%Y-%m-%d').year
+
 
 def getData(data):
     return datetime.strptime(data, '%Y-%m-%d').date()

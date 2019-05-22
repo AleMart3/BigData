@@ -14,7 +14,7 @@ import time
 from itertools import islice
 
 
-os.system("rm -r outputJob1")
+os.system("rm -r ../outputJob1")
 
 start= time.time()
 

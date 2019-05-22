@@ -8,7 +8,7 @@ import time
 from itertools import islice
 
 
-os.system("rm -r outputJob2")
+os.system("rm -r ../outputJob2")
 
 start= time.time()
 
