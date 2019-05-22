@@ -1,5 +1,5 @@
 import os
-from pyspark import SparkContext
+from pyspark import SparkContext, SparkConf
 from job3 import utils as utils
 import time
 
@@ -10,8 +10,8 @@ os.system("rm -r outputJob3")
 
 start = time.time()
 
-
-sc = SparkContext(appName="job3")
+sp = SparkConf().setMaster("local[8]")
+sc = SparkContext(appName="job3", conf=sp)
 
 
 #skip first line
@@ -36,7 +36,7 @@ first_table = sc.textFile("../input/FirstTable") \
 #map: (2016, 2017, 2018) -> (nome, settore)
 one = first_table.map(lambda x: ((x[0], x[1][0][0], x[1][0][1], x[1][1][1]), [(x[1][1][2], x[1][1][0]), (x[1][1][2], x[1][1][0])])) \
                     .reduceByKey(lambda x, y: [utils.mindataclose(x[0], y[0]), utils.maxdataclose(x[1], y[1])]) \
-                    .map(lambda x: ((x[0][1], x[0][2], x[0][3]), (x[1][1][1]/x[1][0][1]*100)-100)) \
+                    .map(lambda x: ((x[0][1], x[0][2], x[0][3]), int((x[1][1][1]/x[1][0][1]*100)-100))) \
                     .reduceByKey(lambda x, y: x + y) \
                     .map(lambda x: ((x[0][0], x[0][1]), [(x[0][2], x[1]), (x[0][2], x[1]), (x[0][2], x[1])])) \
                     .reduceByKey(lambda x, y: [utils.el2016(x[0], y[0]), utils.el2017(x[1], y[1]), utils.el2018(x[2], y[2])]) \

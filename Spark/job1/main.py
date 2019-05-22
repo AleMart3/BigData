@@ -6,7 +6,7 @@
 # somma volume + conteggio
 
 import os
-from pyspark import SparkContext
+from pyspark import SparkContext, SparkConf
 from job1 import utils as utils
 import time
 
@@ -18,8 +18,8 @@ os.system("rm -r outputJob1")
 
 start= time.time()
 
-
-sc = SparkContext(appName="job1")
+sp = SparkConf().setMaster("local[8]")
+sc = SparkContext(appName="job1", conf=sp)
 
 
 #skip first line
