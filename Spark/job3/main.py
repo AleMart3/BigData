@@ -58,7 +58,8 @@ two = el2016.join(el2017) \
 
 #join con se stesso + rimuovo colonne che hanno settore e nome uguale
 result = two.join(two) \
-        .filter(lambda line: line[1][0][1] != line[1][1][1] and line[1][0][0] != line[1][1][0])
+        .filter(lambda line: line[1][0][1] != line[1][1][1] and line[1][0][0] != line[1][1][0]) \
+        .reduceByKey(lambda x, y: x)
 
 
 result.coalesce(1).saveAsTextFile("../outputJob3")
