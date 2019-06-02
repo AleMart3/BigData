@@ -16,21 +16,24 @@ sp = SparkConf().setMaster("local[8]")
 sc = SparkContext(appName="job2", conf=sp)
 
 
+#(ticker) -> (close,volume,anno,data,1)
 #skip first line
-second_table = sc.textFile("../input/SecondTable")\
+second_table = sc.textFile("../input/historical_stock_prices.csv")\
             .mapPartitionsWithIndex(lambda idx, it: islice(it, 1, None) if idx == 0 else it) \
             .map(lambda line: (utils.getString(line, 0), [utils.getDouble(line, 2), utils.getDouble(line, 6),
                                                             utils.getAnno(utils.getString(line, 7)),
                                                             utils.getString(line, 7), 1])) \
             .filter(lambda x: 2004 <= x[1][2] <= 2018)
 
-first_table = sc.textFile("../input/FirstTable") \
+#(ticker) -> (settore)
+first_table = sc.textFile("../input/historical_stocks.csv") \
                 .mapPartitionsWithIndex(lambda idx, it: islice(it, 1, None) if idx == 0 else it) \
                 .map(lambda line: (utils.getString(line, 0), utils.sistemaValori(line))) \
                 .join(second_table)
 
-#(settore, anno, ticker) -> ((data, close), (data, close), volume, cont, close)
-# sommaclose: abbiamo replicato il valore di close per fare la somma
+#PER SEGUIRE GLI INDICI UTILIZZATI NEL CODICE, BASTA FAR RIFERIMENTO AI COMMENTI DI SEGUITO
+#join (ticker, (settore , [close, volume, anno, data, 1] ) )
+#map (settore, anno, ticker) -> ((data, close), (data, close), volume, cont, close), abbiamo replicato il valore di close per fare la somma
 #reduce (settore, anno, ticker) -> (min (data, close), max (data, close), volume, cont, sommaclose)
 #map (settore, anno, ticker) -> (incrementopercentuale, sommavol, cont)
 #map (settore, anno) -> (valori)

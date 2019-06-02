@@ -21,6 +21,14 @@ start= time.time()
 sp = SparkConf().setMaster("local[8]")
 sc = SparkContext(appName="job1", conf=sp)
 
+#PER SEGUIRE GLI INDICI UTILIZZATI NEL CODICE, BASTA FAR RIFERIMENTO AI COMMENTI DI SEGUITO
+#map    (ticker,anno) -> (close,low,high,volume,1)
+#filter  filtra anni compresi tra 1998 e 2018
+#reduceByKey  (ticker,anno)-> (somma_close, min, max, somma_volumi, cont)         aggrega in base alla chiave specificata in map
+#map    ticker -> (anno,close), (anno,close), min, max, media, cont           viene duplicata la tupla (anno,close) per calcolare nella reduce, anno minimo e max
+#reduceByKey ticker -> ((annominimo, close), (annomassimo, close), minimo low, max high, somma volumi, cont)
+#map   ticker -> (differenza, incremento, minimo, massimo, media volumi)
+#sort ordina in base alla differenza e prende le prime 10
 
 #skip first line
 text_file = sc.textFile("input/historical_stock_prices.csv")\
@@ -45,13 +53,7 @@ end= time.time()
 print("execution time is: "+ str((end-start)/60) + " min")
 
 
-#map    (ticker,anno) -> (close,low,high,volume,1)
-#filter  filtra anni compresi tra 1998 e 2018
-#reduceByKey  (ticker,anno)-> (somma_close, min, max, somma_volumi, cont)         aggrega in base alla chiave specificata in map
-#map    ticker -> (anno,close), (anno,close), min, max, media, cont           viene duplicata la tupla (anno,close) per calcolare nella reduce, anno minimo e max
-#reduceByKey ticker -> ((annominimo, close), (annomassimo, close), minimo low, max high, somma volumi, cont)
-#map   ticker -> (differenza, incremento, minimo, massimo, media volumi)
-#sort ordina in base alla differenza e prende le prime 10
+
 
 
 
